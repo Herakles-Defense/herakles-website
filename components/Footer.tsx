@@ -3,7 +3,7 @@ import { Mail, Building2, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-black-secondary border-t border-white-primary/10">
+    <footer className="bg-black-secondary border-t border-white-primary/10" role="contentinfo" aria-label="Site Footer">
       <div className="container-custom py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -18,8 +18,8 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div>
-            <h4 className="text-white-primary font-semibold mb-4">Navigation</h4>
+          <nav aria-labelledby="footer-navigation-heading">
+            <h4 id="footer-navigation-heading" className="text-white-primary font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -58,11 +58,11 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Legal */}
-          <div>
-            <h4 className="text-white-primary font-semibold mb-4">Legal</h4>
+          <nav aria-labelledby="footer-legal-heading">
+            <h4 id="footer-legal-heading" className="text-white-primary font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -83,11 +83,11 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Contact */}
-          <div>
-            <h4 className="text-white-primary font-semibold mb-4">Contact</h4>
+          <div aria-labelledby="footer-contact-heading">
+            <h4 id="footer-contact-heading" className="text-white-primary font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-white-secondary">
                 <Mail size={16} className="text-orange-primary" />

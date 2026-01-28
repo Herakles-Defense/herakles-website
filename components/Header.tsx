@@ -18,16 +18,16 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="fixed top-0 left-0 right-0 z-50" role="banner">
       {/* Glassmorphism Background */}
       <div className="absolute inset-0 bg-black-primary/80 backdrop-blur-md border-b border-white-primary/10" />
 
-      <nav className="relative container-custom flex items-center justify-between py-4 px-4">
+      <nav className="relative container-custom flex items-center justify-between py-4 px-4" role="navigation" aria-label="Main Navigation">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3 relative z-10">
+        <Link href="/" className="flex items-center space-x-3 relative z-10" aria-label="Herakles Defense Homepage">
           <Image
             src="/images/herakles-logo.png"
-            alt="Herakles Logo"
+            alt="Herakles Defense Logo"
             width={180}
             height={50}
             className="h-12 w-auto"
@@ -63,6 +63,9 @@ export default function Header() {
           className="md:hidden text-white-primary p-2 rounded-lg hover:bg-white-primary/10 transition-colors relative z-10"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           whileTap={{ scale: 0.95 }}
+          aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </motion.button>
@@ -71,7 +74,10 @@ export default function Header() {
       {/* Mobile Menu with Animation */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <motion.nav
+            id="mobile-navigation"
+            role="navigation"
+            aria-label="Mobile Navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -123,7 +129,7 @@ export default function Header() {
                 </Button>
               </motion.div>
             </div>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </header>

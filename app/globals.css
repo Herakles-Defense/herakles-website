@@ -73,6 +73,35 @@
       scroll-behavior: auto;
     }
   }
+
+  /* Enhanced Focus States for Accessibility */
+  *:focus {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline: 3px solid var(--color-orange-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid var(--color-orange-primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2);
+  }
+
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    *:focus-visible {
+      outline-width: 4px;
+      outline-offset: 4px;
+    }
+  }
 }
 
 @layer components {
