@@ -117,7 +117,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-orange-primary font-bold mb-2 text-lg">Unternehmen</h3>
                       <p className="text-white-secondary leading-relaxed">
-                        Hive Guard UG (haftungsbeschränkt)<br />
+                        Herakles UG (haftungsbeschränkt)<br />
                         Rosenbuschstr. 2<br />
                         80538 München<br />
                         Deutschland

@@ -79,7 +79,16 @@ export default function Footer() {
                   className="text-white-secondary hover:text-orange-primary transition-colors inline-flex items-center gap-2 group"
                 >
                   <span className="w-0 group-hover:w-2 h-px bg-orange-primary transition-all duration-300" />
-                  Privacy Policy
+                  Datenschutz
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/agb"
+                  className="text-white-secondary hover:text-orange-primary transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-0 group-hover:w-2 h-px bg-orange-primary transition-all duration-300" />
+                  AGB
                 </Link>
               </li>
             </ul>
@@ -101,7 +110,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 text-white-secondary">
                 <Building2 size={16} className="text-orange-primary mt-0.5" />
-                <span>Hive Guard UG<br />(haftungsbeschränkt)</span>
+                <span>Herakles UG<br />(haftungsbeschränkt)</span>
               </li>
               <li className="flex items-center gap-2 text-gray-500 text-xs">
                 <MapPin size={14} className="text-orange-primary" />

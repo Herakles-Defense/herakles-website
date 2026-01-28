@@ -24,13 +24,14 @@ export default function Header() {
 
       <nav className="relative container-custom flex items-center justify-between py-4 px-4" role="navigation" aria-label="Main Navigation">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3 relative z-10" aria-label="Herakles Defense Homepage">
+        <Link href="/" className="flex items-center space-x-3 relative z-10 group" aria-label="Herakles Defense Homepage">
           <Image
             src="/images/herakles-logo.png"
             alt="Herakles Defense Logo"
-            width={180}
-            height={50}
-            className="h-12 w-auto"
+            width={240}
+            height={66}
+            className="h-14 md:h-16 w-auto transition-all duration-300 group-hover:scale-105"
+            priority
           />
         </Link>
 
