@@ -181,4 +181,33 @@
     @apply h-0.5 bg-orange-primary;
     width: 40px;
   }
+
+  /* Image Effects */
+  .image-container {
+    @apply relative overflow-hidden rounded-xl;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .image-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.2);
+  }
+
+  .image-zoom {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .image-container:hover .image-zoom {
+    transform: scale(1.05);
+  }
+
+  /* Image Overlay Effect */
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black-primary/80 via-transparent to-transparent;
+    @apply opacity-0 transition-opacity duration-400;
+  }
+
+  .image-container:hover .image-overlay {
+    opacity: 1;
+  }
 }

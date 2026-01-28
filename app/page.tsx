@@ -82,15 +82,17 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 1 }}
-              className="relative w-full max-w-4xl mx-auto"
+              className="relative w-full max-w-4xl mx-auto image-container"
             >
               <Image
-                src="/images/interceptor-product.png"
+                src="/images/interceptor-product.webp"
                 alt="Herakles Interceptor"
                 width={1200}
                 height={675}
-                className="rounded-xl shadow-2xl"
+                className="rounded-xl shadow-2xl image-zoom"
                 priority
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2NzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
               />
             </motion.div>
           </div>
@@ -231,14 +233,16 @@ export default function Home() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="order-2 lg:order-1"
+              className="order-2 lg:order-1 image-container"
             >
               <Image
-                src="/images/interceptor-action.png"
+                src="/images/interceptor-action.webp"
                 alt="Herakles Interceptor in Action"
                 width={800}
                 height={600}
-                className="rounded-xl shadow-2xl"
+                className="rounded-xl shadow-2xl image-zoom"
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWExYTFhIi8+PC9zdmc+"
               />
             </motion.div>
 

@@ -251,13 +251,15 @@ export default function TechnologyPage() {
                 viewport={{ once: true }}
                 className="glass-card border-2 border-orange-primary"
               >
-                <div className="relative w-full mb-6">
+                <div className="relative w-full mb-6 image-container">
                   <Image
-                    src="/images/tactical-diagram.png"
+                    src="/images/tactical-diagram.webp"
                     alt="Taktisches Abfang-Diagramm"
                     width={1600}
                     height={900}
-                    className="rounded-lg w-full h-auto"
+                    className="rounded-lg w-full h-auto image-zoom"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI5MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
                   />
                 </div>
 
@@ -325,13 +327,16 @@ export default function TechnologyPage() {
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
+                  className="image-container"
                 >
                   <Image
-                    src="/images/interceptor-action.png"
+                    src="/images/interceptor-action.webp"
                     alt="Interceptor in Action"
                     width={800}
                     height={600}
-                    className="rounded-xl shadow-2xl"
+                    className="rounded-xl shadow-2xl image-zoom"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWExYTFhIi8+PC9zdmc+"
                   />
                 </motion.div>
               </div>
