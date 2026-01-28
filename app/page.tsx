@@ -2,110 +2,116 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle, TrendingUp, DollarSign, Zap, CheckCircle, ChevronDown } from "lucide-react";
+import { ArrowRight, PlayCircle, TrendingUp, DollarSign, Zap, CheckCircle, Target, Rocket, Shield } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import GradientBorderCard from "@/components/GradientBorderCard";
-import MinimalLineCard from "@/components/MinimalLineCard";
+import GlassmorphismCard from "@/components/GlassmorphismCard";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black-primary">
       <Header />
 
-      {/* Hero Section - Modernized */}
-      <section className="relative min-h-screen flex items-center justify-center pt-24">
-        {/* Gradient Overlay Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black-primary via-black-secondary to-black-primary" />
+      {/* Hero Section - Asymmetric Grid with Vision Background */}
+      <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
+        {/* Vision-Style Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-primary/10 via-black-primary to-black-secondary" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,107,53,0.15),transparent_50%)]" />
 
-        <div className="relative container-custom px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Tagline - Animated */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-orange-primary font-semibold mb-6 text-lg tracking-wide uppercase"
-            >
-              Built for the Threats Others Cannot Solve
-            </motion.p>
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: 'linear-gradient(rgba(255,107,53,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.3) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} />
 
-            {/* Main Headline - Animated */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white-primary"
-            >
-              FPV-Kamikaze-Drohnen sind die größte Bedrohung<br className="hidden md:block" />
-              <span className="gradient-text"> moderner Kriegsführung.</span>
-            </motion.h1>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-3xl md:text-4xl font-bold mb-12 text-white-primary"
-            >
-              Wir haben die Antwort.
-            </motion.h2>
-
-            {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl md:text-2xl mb-12 text-white-secondary max-w-4xl mx-auto leading-relaxed"
-            >
-              Eine FPV-Drohne kostet 300 Euro und kann einen Panzer zerstören und viele Leben beenden.<br />
-              <span className="font-semibold text-orange-primary">Unser Interceptor kostet einen Bruchteil dessen, was er schützt.</span>
-            </motion.p>
-
-            {/* CTA Buttons - Animated */}
+        <div className="relative container-custom px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 items-center max-w-7xl mx-auto">
+            {/* Left: Hero Image */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-            >
-              <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
-                Technologie entdecken
-              </Button>
-              <Button variant="secondary" size="lg" icon={PlayCircle} href="/mission">
-                Unsere Mission
-              </Button>
-            </motion.div>
-
-            {/* Hero Image - Animated */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-              className="relative w-full max-w-4xl mx-auto image-container"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="order-2 lg:order-1 image-container"
             >
               <Image
-                src="/images/interceptor-product.webp"
-                alt="Herakles Interceptor"
+                src="/images/interceptor-action.webp"
+                alt="Herakles Interceptor in Action"
                 width={1200}
-                height={675}
+                height={800}
                 className="rounded-xl shadow-2xl image-zoom"
                 priority
                 placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2NzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI4MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
               />
+            </motion.div>
+
+            {/* Right: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="order-1 lg:order-2 glass-card"
+            >
+              {/* Tagline */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-orange-primary font-semibold mb-4 text-sm md:text-base tracking-wide uppercase"
+              >
+                Built for the Threats Others Cannot Solve
+              </motion.p>
+
+              {/* Main Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white-primary"
+              >
+                FPV-Kamikaze-Drohnen sind die größte Bedrohung
+                <span className="gradient-text"> moderner Kriegsführung.</span>
+              </motion.h1>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-2xl md:text-3xl font-bold mb-6 text-white-primary"
+              >
+                Wir haben die Antwort.
+              </motion.h2>
+
+              {/* Subheadline */}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="text-base md:text-lg mb-8 text-white-secondary leading-relaxed"
+              >
+                Eine FPV-Drohne kostet 300 Euro und kann einen Panzer zerstören und viele Leben beenden.<br />
+                <span className="font-semibold text-orange-primary">Unser Interceptor kostet einen Bruchteil dessen, was er schützt.</span>
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
+                  Technologie entdecken
+                </Button>
+                <Button variant="secondary" size="lg" icon={PlayCircle} href="/mission">
+                  Unsere Mission
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ChevronDown size={32} className="text-orange-primary" />
-        </motion.div>
       </section>
 
       {/* Problem Statement */}
@@ -133,7 +139,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Facts Section - With New Cards */}
+      {/* Facts Section - 3 Column Grid */}
       <section className="section-padding bg-black-primary">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
@@ -205,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Solution Section - With MinimalLineCards */}
+      {/* Solution Section - Sticky Image + Vertical Timeline */}
       <section className="section-padding bg-gradient-to-b from-black-secondary to-black-primary">
         <div className="container-custom">
           <motion.h2
@@ -221,83 +227,116 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-center text-white-secondary mb-12 max-w-3xl mx-auto"
+            className="text-xl text-center text-white-secondary mb-16 max-w-3xl mx-auto"
           >
             Das erste dezentrale Anti-FPV-System für mobile Infanterie.<br />
             Entwickelt für die härtesten Einsatzszenarien.
           </motion.p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            {/* Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-16 items-start max-w-6xl mx-auto">
+            {/* Left: Sticky Product Image */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="order-2 lg:order-1 image-container"
+              className="lg:sticky lg:top-32 image-container"
             >
               <Image
-                src="/images/interceptor-action.webp"
-                alt="Herakles Interceptor in Action"
+                src="/images/interceptor-product.webp"
+                alt="Herakles Interceptor"
                 width={800}
-                height={600}
+                height={800}
                 className="rounded-xl shadow-2xl image-zoom"
                 placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWExYTFhIi8+PC9zdmc+"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWExYTFhIi8+PC9zdmc+"
               />
             </motion.div>
 
-            {/* Features - Using MinimalLineCards */}
-            <motion.div
-              className="order-1 lg:order-2 space-y-4"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.12 }
-                }
-              }}
-            >
-              <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
-                <MinimalLineCard
-                  icon={CheckCircle}
+            {/* Right: Vertical Timeline */}
+            <div className="space-y-8 relative">
+              {/* Vertical Orange Line */}
+              <div className="absolute left-6 top-8 bottom-8 w-[2px] bg-gradient-to-b from-orange-primary via-orange-primary/50 to-transparent hidden md:block" />
+
+              {/* Step 1: Autonom */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="relative"
+              >
+                <GlassmorphismCard
+                  icon={Target}
                   title="Autonom"
                   description="KI-gestütztes Tracking und Abfangen – keine Funkverbindung nötig nach Launch"
-                />
-              </motion.div>
-              <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
-                <MinimalLineCard
-                  icon={CheckCircle}
-                  title="Kosteneffizient"
-                  description="Bruchteil der Kosten etablierter Systeme, kein teurer Sprengkopf"
-                />
-              </motion.div>
-              <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
-                <MinimalLineCard
-                  icon={CheckCircle}
-                  title="Dezentral"
-                  description="Schutz für Schützengräben, FOBs, Konvois – ohne schweres Gerät"
-                />
-              </motion.div>
-              <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
-                <MinimalLineCard
-                  icon={CheckCircle}
-                  title="Schnell"
-                  description="Hit-to-Kill-Prinzip mit kinetischer Energie bei frontaler Kollision"
-                />
+                  className="ml-0 md:ml-16"
+                >
+                  <div className="absolute left-0 top-4 w-12 h-12 rounded-full bg-orange-primary/20 border-4 border-orange-primary flex items-center justify-center hidden md:flex">
+                    <span className="text-orange-primary font-bold text-lg">1</span>
+                  </div>
+                </GlassmorphismCard>
               </motion.div>
 
+              {/* Step 2: Kosteneffizient */}
               <motion.div
-                className="pt-6"
-                variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="relative"
               >
-                <Button variant="primary" size="md" icon={ArrowRight} href="/technology">
-                  Mehr zur Technologie
-                </Button>
+                <GlassmorphismCard
+                  icon={DollarSign}
+                  title="Kosteneffizient"
+                  description="Bruchteil der Kosten etablierter Systeme, kein teurer Sprengkopf"
+                  className="ml-0 md:ml-16"
+                >
+                  <div className="absolute left-0 top-4 w-12 h-12 rounded-full bg-orange-primary/20 border-4 border-orange-primary flex items-center justify-center hidden md:flex">
+                    <span className="text-orange-primary font-bold text-lg">2</span>
+                  </div>
+                </GlassmorphismCard>
               </motion.div>
-            </motion.div>
+
+              {/* Step 3: Dezentral */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative"
+              >
+                <GlassmorphismCard
+                  icon={Shield}
+                  title="Dezentral"
+                  description="Schutz für Schützengräben, FOBs, Konvois – ohne schweres Gerät"
+                  className="ml-0 md:ml-16"
+                >
+                  <div className="absolute left-0 top-4 w-12 h-12 rounded-full bg-orange-primary/20 border-4 border-orange-primary flex items-center justify-center hidden md:flex">
+                    <span className="text-orange-primary font-bold text-lg">3</span>
+                  </div>
+                </GlassmorphismCard>
+              </motion.div>
+
+              {/* Step 4: Schnell */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="relative"
+              >
+                <GlassmorphismCard
+                  icon={Rocket}
+                  title="Schnell"
+                  description="Hit-to-Kill-Prinzip mit kinetischer Energie bei frontaler Kollision"
+                  className="ml-0 md:ml-16"
+                >
+                  <div className="absolute left-0 top-4 w-12 h-12 rounded-full bg-orange-primary/20 border-4 border-orange-primary flex items-center justify-center hidden md:flex">
+                    <span className="text-orange-primary font-bold text-lg">4</span>
+                  </div>
+                </GlassmorphismCard>
+              </motion.div>
+            </div>
           </div>
 
           <motion.div
@@ -306,10 +345,13 @@ export default function Home() {
             viewport={{ once: true }}
             className="mt-16 max-w-3xl mx-auto text-center"
           >
-            <p className="text-lg text-white-secondary leading-relaxed">
+            <p className="text-lg text-white-secondary leading-relaxed mb-6">
               <span className="font-semibold text-white-primary">Kein Sprengkopf.</span> Keine Funkverbindung nach Launch. Keine teuren Raketen.<br />
               <span className="gradient-text font-bold text-xl">Nur intelligente, opferbare Masse.</span>
             </p>
+            <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
+              Mehr zur Technologie
+            </Button>
           </motion.div>
         </div>
       </section>
