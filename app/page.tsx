@@ -5,172 +5,226 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-primary">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-background.png"
-            alt="Hero Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/90" />
-        </div>
+      <section className="relative min-h-[90vh] flex items-center justify-center pt-24">
+        <div className="container-custom px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Tagline */}
+            <p className="text-accent font-semibold mb-6 text-lg tracking-wide">
+              Built for the Threats Others Cannot Solve
+            </p>
 
-        {/* Hero Content */}
-        <div className="relative z-10 container-custom px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            FPV-Drohnen sind die <span className="text-accent">größte Bedrohung</span><br />
-            moderner Kriegsführung
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-neutral/90 max-w-3xl mx-auto">
-            Wir haben die Antwort.
-          </p>
-          <p className="text-lg mb-12 text-neutral/80 max-w-2xl mx-auto">
-            Eine FPV-Drohne kostet 300 Euro und kann einen Panzer zerstören.<br />
-            Unser Interceptor kostet einen Bruchteil dessen, was er schützt.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/technology" className="btn-primary">
-              Technologie entdecken
-            </Link>
-            <Link href="/mission" className="btn-secondary">
-              Unsere Mission
-            </Link>
-          </div>
-        </div>
+            {/* Main Headline */}
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-secondary">
+              FPV-Kamikaze-Drohnen sind die größte Bedrohung<br className="hidden md:block" />
+              <span className="text-accent"> moderner Kriegsführung.</span>
+            </h1>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-          <div className="flex flex-col items-center animate-bounce">
-            <span className="text-neutral/50 text-sm mb-2">Scroll</span>
-            <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-secondary">
+              Wir haben die Antwort.
+            </h2>
+
+            {/* Subheadline */}
+            <p className="text-xl md:text-2xl mb-12 text-secondary/80 max-w-4xl mx-auto leading-relaxed">
+              Eine FPV-Drohne kostet 300 Euro und kann einen Panzer zerstören und viele Leben beenden.<br />
+              <span className="font-semibold text-accent">Unser Interceptor kostet einen Bruchteil dessen, was er schützt.</span>
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Link href="/technology" className="btn-primary">
+                Technologie entdecken
+              </Link>
+              <Link href="/mission" className="btn-secondary">
+                Unsere Mission
+              </Link>
+            </div>
+
+            {/* Hero Image */}
+            <div className="relative w-full max-w-4xl mx-auto">
+              <Image
+                src="/images/interceptor-product.png"
+                alt="Herakles Interceptor"
+                width={1200}
+                height={675}
+                className="rounded-lg shadow-2xl"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="section-padding bg-secondary">
+      {/* Problem Statement */}
+      <section className="section-padding bg-neutral/30">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center">
-              Das Problem
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-secondary">
+              Die Realität
             </h2>
-            <div className="space-y-6 text-lg text-neutral/80">
-              <p>
-                FPV-Drohnen haben sich in den letzten drei Jahren zum <span className="text-accent font-semibold">dominierenden taktischen Kampfmittel</span> asymmetrischer Konflikte entwickelt.
-              </p>
-              <p>
-                Der Ukrainekonflikt zeigt dies eindrucksvoll: Improvisierte FPV-Kamikazedrohnen verursachen <span className="text-accent font-semibold">über 42% aller verifizierten Fahrzeugverluste</span>.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div className="bg-primary p-6 rounded-lg">
-                  <div className="text-accent text-4xl font-bold mb-2">300-700€</div>
-                  <div className="text-neutral/70">Kosten pro Drohne</div>
-                </div>
-                <div className="bg-primary p-6 rounded-lg">
-                  <div className="text-accent text-4xl font-bold mb-2">42%</div>
-                  <div className="text-neutral/70">Fahrzeugverluste</div>
-                </div>
-                <div className="bg-primary p-6 rounded-lg">
-                  <div className="text-accent text-4xl font-bold mb-2">100+ km/h</div>
-                  <div className="text-neutral/70">Angriffsgeschwindigkeit</div>
+            <p className="text-2xl font-bold text-accent mb-6">
+              FPV-Drohnen töten täglich Soldaten.<br />
+              Sie dominieren moderne Schlachtfelder.
+            </p>
+            <p className="text-lg text-secondary/80 leading-relaxed">
+              Counter-UAS-Systeme sind zu schwer, zu teuer, zu langsam.
+              Herakles ist das erste System, das speziell für mobile Infanterie entwickelt wurde.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Facts Section */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-secondary text-center">
+              Die Fakten
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-white border-2 border-accent p-8 rounded-lg text-center">
+                <div className="text-accent text-5xl font-bold mb-3">42%</div>
+                <div className="text-secondary/70 text-lg">
+                  aller Fahrzeugverluste in der Ukraine: FPV-Kamikaze-Drohnen
                 </div>
               </div>
+              <div className="bg-white border-2 border-accent p-8 rounded-lg text-center">
+                <div className="text-accent text-5xl font-bold mb-3">300-700€</div>
+                <div className="text-secondary/70 text-lg">
+                  pro Drohne
+                </div>
+              </div>
+              <div className="bg-white border-2 border-accent p-8 rounded-lg text-center">
+                <div className="text-accent text-5xl font-bold mb-3">100+ km/h</div>
+                <div className="text-secondary/70 text-lg">
+                  Angriffsgeschwindigkeit
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-neutral/50 p-8 rounded-lg">
+              <p className="text-lg text-secondary/80 mb-4 leading-relaxed">
+                <span className="font-semibold">Bestehende Systeme?</span> Zu schwer, zu teuer, zu langsam.
+                Jammer funktionieren nur begrenzt. Lasersysteme sind Millionen-Investitionen.
+                Klassische Flak trifft keine 15cm-Targets bei 110 km/h.
+              </p>
+              <p className="text-xl font-bold text-accent">
+                Soldaten sterben, weil es keine praktikable Lösung gab.<br />
+                Bis jetzt.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Solution Section */}
-      <section className="section-padding bg-primary">
+      <section className="section-padding bg-gradient-to-b from-white to-neutral/30">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-secondary">
             Die Lösung: <span className="text-accent">Herakles Interceptor</span>
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <p className="text-xl text-center text-secondary/70 mb-12 max-w-3xl mx-auto">
+            Das erste dezentrale Anti-FPV-System für mobile Infanterie.<br />
+            Entwickelt für die härtesten Einsatzszenarien.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* Image */}
+            <div className="order-2 lg:order-1">
               <Image
-                src="/images/interceptor-product.png"
-                alt="Herakles Interceptor"
-                width={600}
+                src="/images/interceptor-action.png"
+                alt="Herakles Interceptor in Action"
+                width={800}
                 height={600}
-                className="rounded-lg"
+                className="rounded-lg shadow-xl"
               />
             </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold">Autonomer Abfang-Interceptor</h3>
-              <p className="text-lg text-neutral/80">
-                Das Herakles-System ist ein reaktives Drohnen-Abwehrsystem, speziell für die Neutralisierung feindlicher FPV-Kamikazedrohnen entwickelt.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-accent mr-3">✓</span>
-                  <span><strong>Hit-to-Kill Prinzip:</strong> Kinetische Neutralisation ohne Sprengkopf</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-3">✓</span>
-                  <span><strong>KI-gestützt:</strong> Autonomes Tracking und Abfangen</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-3">✓</span>
-                  <span><strong>Kosteneffizient:</strong> Bruchteil der Kosten etablierter Systeme</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-3">✓</span>
-                  <span><strong>Dezentral:</strong> Für mobile Infanterie ohne schweres Gerät</span>
-                </li>
-              </ul>
-              <Link href="/technology" className="btn-primary inline-block mt-6">
-                Mehr zur Technologie
-              </Link>
+
+            {/* Features */}
+            <div className="order-1 lg:order-2 space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-secondary mb-2">Autonom</h3>
+                  <p className="text-secondary/70">
+                    KI-gestütztes Tracking und Abfangen – keine Funkverbindung nötig nach Launch
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-secondary mb-2">Kosteneffizient</h3>
+                  <p className="text-secondary/70">
+                    Bruchteil der Kosten etablierter Systeme, kein teurer Sprengkopf
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-secondary mb-2">Dezentral</h3>
+                  <p className="text-secondary/70">
+                    Schutz für Schützengräben, FOBs, Konvois – ohne schweres Gerät
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-secondary mb-2">Schnell</h3>
+                  <p className="text-secondary/70">
+                    Hit-to-Kill-Prinzip mit kinetischer Energie bei frontaler Kollision
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-6">
+                <Link href="/technology" className="btn-primary inline-block">
+                  Mehr zur Technologie
+                </Link>
+              </div>
             </div>
+          </div>
+
+          <div className="mt-16 max-w-3xl mx-auto text-center">
+            <p className="text-lg text-secondary/80 leading-relaxed">
+              <span className="font-semibold text-secondary">Kein Sprengkopf.</span> Keine Funkverbindung nach Launch. Keine teuren Raketen.<br />
+              <span className="text-accent font-bold text-xl">Nur intelligente, opferbare Masse.</span>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Market Section */}
-      <section className="section-padding bg-secondary">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">
-            Der Markt
-          </h2>
-          <p className="text-xl text-neutral/80 max-w-3xl mx-auto mb-12">
-            Der Counter-UAS-Markt wächst rasant. Deutschland allein investiert 12 Mrd. USD in Drohnentechnologie bis 2030.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-primary p-8 rounded-lg">
-              <div className="text-accent text-5xl font-bold mb-4">$20,31 Mrd</div>
-              <div className="text-xl mb-2">Marktgröße 2030</div>
-              <div className="text-neutral/70">CAGR 25,1%</div>
-            </div>
-            <div className="bg-primary p-8 rounded-lg">
-              <div className="text-accent text-5xl font-bold mb-4">$12 Mrd</div>
-              <div className="text-xl mb-2">Deutschland bis 2030</div>
-              <div className="text-neutral/70">Drohnentechnologie</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-b from-primary to-secondary">
+      {/* Closing CTA */}
+      <section className="section-padding bg-secondary text-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Bereit für die Zukunft der Verteidigung?
+            Wir stehen am Anfang einer neuen Ära<br />
+            asymmetrischer Bedrohungen
           </h2>
-          <p className="text-xl text-neutral/80 max-w-2xl mx-auto mb-8">
-            Erfahren Sie mehr über unsere Technologie und wie wir die Bedrohung durch FPV-Drohnen neutralisieren.
+          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
+            FPV-Drohnen werden sich global verbreiten. Terrorgruppen, nichtstaatliche Akteure,
+            hybride Gegner – sie alle beobachten und lernen.<br />
+            <span className="font-bold text-accent">Herakles ist die Antwort, bevor es zu spät ist.</span>
           </p>
-          <Link href="/contact" className="btn-primary">
-            Kontakt aufnehmen
+          <Link href="/mission" className="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 inline-block text-lg">
+            Unsere Mission
           </Link>
         </div>
       </section>

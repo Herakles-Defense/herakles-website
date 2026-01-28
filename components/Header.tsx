@@ -9,7 +9,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-secondary">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-neutral">
       <nav className="container-custom flex items-center justify-between py-4 px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
@@ -24,20 +24,14 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="text-neutral hover:text-accent transition-colors">
+          <Link href="/" className="text-secondary hover:text-accent transition-colors font-medium">
             Home
           </Link>
-          <Link href="/technology" className="text-neutral hover:text-accent transition-colors">
+          <Link href="/technology" className="text-secondary hover:text-accent transition-colors font-medium">
             Technologie
           </Link>
-          <Link href="/mission" className="text-neutral hover:text-accent transition-colors">
+          <Link href="/mission" className="text-secondary hover:text-accent transition-colors font-medium">
             Mission
-          </Link>
-          <Link href="/about" className="text-neutral hover:text-accent transition-colors">
-            Über uns
-          </Link>
-          <Link href="/cto" className="text-neutral hover:text-accent transition-colors">
-            Für CTOs
           </Link>
           <LanguageSwitcher />
           <Link href="/contact" className="btn-primary">
@@ -47,7 +41,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-neutral"
+          className="md:hidden text-secondary"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,13 +52,11 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-secondary">
+        <div className="md:hidden bg-primary border-t border-neutral">
           <div className="flex flex-col space-y-4 py-4 px-4">
-            <Link href="/" className="text-neutral hover:text-accent">Home</Link>
-            <Link href="/technology" className="text-neutral hover:text-accent">Technologie</Link>
-            <Link href="/mission" className="text-neutral hover:text-accent">Mission</Link>
-            <Link href="/about" className="text-neutral hover:text-accent">Über uns</Link>
-            <Link href="/cto" className="text-neutral hover:text-accent">Für CTOs</Link>
+            <Link href="/" className="text-secondary hover:text-accent font-medium">Home</Link>
+            <Link href="/technology" className="text-secondary hover:text-accent font-medium">Technologie</Link>
+            <Link href="/mission" className="text-secondary hover:text-accent font-medium">Mission</Link>
             <div className="pt-2">
               <LanguageSwitcher />
             </div>

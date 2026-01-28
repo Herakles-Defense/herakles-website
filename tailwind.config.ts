@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Herakles Corporate Design - Tactical Minimalism
-        primary: "#18181B",       // Fast-Schwarz
-        secondary: "#27272A",     // Dunkelgrau
-        accent: "#F97316",        // Signal-Orange
-        neutral: "#FAFAFA",       // Fast-Weiss
+        // Herakles Corporate Design - Precision Engineering
+        primary: "#FFFFFF",       // Reinweiss (Hintergrund)
+        secondary: "#000000",     // Schwarz (Text/Kontrast)
+        accent: "#0066FF",        // Elektro-Blau (Akzente)
+        neutral: "#E5E5E5",       // Hellgrau (subtile Elemente)
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "sans-serif"],
