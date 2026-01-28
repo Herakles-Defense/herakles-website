@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle, TrendingUp, DollarSign, Zap, CheckCircle, Target, Rocket, Shield } from "lucide-react";
+import { ArrowRight, PlayCircle, TrendingUp, DollarSign, Zap, Target, Rocket, Shield, Clock, Radio, Eye, Cpu, Battery } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
@@ -14,101 +14,131 @@ export default function Home() {
     <div className="min-h-screen bg-black-primary">
       <Header />
 
-      {/* Hero Section - Asymmetric Grid with Vision Background */}
-      <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
-        {/* Vision-Style Background */}
+      {/* Hero Section - 50/50 Split-Screen */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Vision Background on both sides */}
         <div className="absolute inset-0 bg-gradient-to-br from-orange-primary/10 via-black-primary to-black-secondary" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,107,53,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,107,53,0.15),transparent_50%)]" />
 
-        {/* Animated Grid Pattern */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'linear-gradient(rgba(255,107,53,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.3) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }} />
-
-        <div className="relative container-custom px-4 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 items-center max-w-7xl mx-auto">
-            {/* Left: Hero Image */}
+        <div className="relative w-full h-screen">
+          <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+            {/* Left: Full-height Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="order-2 lg:order-1 image-container"
+              className="relative h-full min-h-[50vh] lg:min-h-screen"
             >
-              <Image
-                src="/images/interceptor-action.webp"
-                alt="Herakles Interceptor in Action"
-                width={1200}
-                height={800}
-                className="rounded-xl shadow-2xl image-zoom"
-                priority
-                placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI4MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
-              />
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/interceptor-action.webp"
+                  alt="Herakles Interceptor in Action"
+                  fill
+                  className="object-cover"
+                  priority
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI4MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black-primary/50 lg:to-black-primary/80" />
+              </div>
             </motion.div>
 
-            {/* Right: Text Content */}
+            {/* Right: Text + Stats Grid */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="order-1 lg:order-2 glass-card"
+              className="relative flex items-center justify-center p-8 lg:p-16"
             >
-              {/* Tagline */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-orange-primary font-semibold mb-4 text-sm md:text-base tracking-wide uppercase"
-              >
-                Built for the Threats Others Cannot Solve
-              </motion.p>
+              {/* Grid Pattern only on text side */}
+              <div className="absolute inset-0 opacity-10" style={{
+                backgroundImage: 'linear-gradient(rgba(255,107,53,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.3) 1px, transparent 1px)',
+                backgroundSize: '50px 50px'
+              }} />
 
-              {/* Main Headline */}
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white-primary"
-              >
-                FPV-Kamikaze-Drohnen sind die größte Bedrohung
-                <span className="gradient-text"> moderner Kriegsführung.</span>
-              </motion.h1>
+              <div className="relative max-w-2xl">
+                {/* Tagline */}
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="text-orange-primary font-semibold mb-4 text-sm md:text-base tracking-wide uppercase"
+                >
+                  Built for the Threats Others Cannot Solve
+                </motion.p>
 
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-2xl md:text-3xl font-bold mb-6 text-white-primary"
-              >
-                Wir haben die Antwort.
-              </motion.h2>
+                {/* Main Headline */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white-primary"
+                >
+                  FPV-Kamikaze-Drohnen sind die größte Bedrohung
+                  <span className="gradient-text"> moderner Kriegsführung.</span>
+                </motion.h1>
 
-              {/* Subheadline */}
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-base md:text-lg mb-8 text-white-secondary leading-relaxed"
-              >
-                Eine FPV-Drohne kostet 300 Euro und kann einen Panzer zerstören und viele Leben beenden.<br />
-                <span className="font-semibold text-orange-primary">Unser Interceptor kostet einen Bruchteil dessen, was er schützt.</span>
-              </motion.p>
+                <motion.h2
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="text-2xl md:text-3xl font-bold mb-8 text-white-primary"
+                >
+                  Wir haben die Antwort.
+                </motion.h2>
 
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
-                  Technologie entdecken
-                </Button>
-                <Button variant="secondary" size="lg" icon={PlayCircle} href="/mission">
-                  Unsere Mission
-                </Button>
-              </motion.div>
+                {/* Stats Grid - 2x2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                  className="grid grid-cols-2 gap-4 mb-8"
+                >
+                  <div className="glass-card p-4 text-center">
+                    <div className="text-2xl md:text-3xl font-bold text-orange-primary mb-1">120+ km/h</div>
+                    <div className="text-xs md:text-sm text-white-secondary">Interceptor Speed</div>
+                  </div>
+                  <div className="glass-card p-4 text-center">
+                    <div className="text-2xl md:text-3xl font-bold text-orange-primary mb-1">&lt;4 min</div>
+                    <div className="text-xs md:text-sm text-white-secondary">Reaction Time</div>
+                  </div>
+                  <div className="glass-card p-4 text-center">
+                    <div className="text-2xl md:text-3xl font-bold text-orange-primary mb-1">500+ m</div>
+                    <div className="text-xs md:text-sm text-white-secondary">Detection Range</div>
+                  </div>
+                  <div className="glass-card p-4 text-center">
+                    <div className="text-2xl md:text-3xl font-bold text-orange-primary mb-1">&lt;50 ms</div>
+                    <div className="text-xs md:text-sm text-white-secondary">Tracking Latency</div>
+                  </div>
+                </motion.div>
+
+                {/* Subtext */}
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  className="text-base md:text-lg mb-8 text-white-secondary leading-relaxed"
+                >
+                  Eine FPV-Drohne kostet 300 Euro und kann einen Panzer zerstören und viele Leben beenden.<br />
+                  <span className="font-semibold text-orange-primary">Unser Interceptor kostet einen Bruchteil dessen, was er schützt.</span>
+                </motion.p>
+
+                {/* CTA Buttons */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.9 }}
+                  className="flex flex-col sm:flex-row gap-4"
+                >
+                  <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
+                    Technologie entdecken
+                  </Button>
+                  <Button variant="secondary" size="lg" icon={PlayCircle} href="/mission">
+                    Unsere Mission
+                  </Button>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -122,7 +152,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white-primary">
               Die Realität
@@ -136,13 +166,9 @@ export default function Home() {
               Herakles ist das erste System, das speziell für mobile Infanterie entwickelt wurde.
             </p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Facts Section - 3 Column Grid */}
-      <section className="section-padding bg-black-primary">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
+          {/* Diagonal Staggered Cards */}
+          <div className="max-w-6xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -152,50 +178,62 @@ export default function Home() {
               Die Fakten
             </motion.h2>
 
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.15 }
-                }
-              }}
-            >
-              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+            <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              {/* Card 1 - Top */}
+              <motion.div
+                initial={{ opacity: 0, y: 30, rotate: -2 }}
+                whileInView={{ opacity: 1, y: 0, rotate: -1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="md:mt-0"
+              >
                 <GradientBorderCard
                   icon={TrendingUp}
                   title="42%"
                   description="aller Fahrzeugverluste in der Ukraine: FPV-Kamikaze-Drohnen"
-                  className="text-center"
+                  className="text-center transform transition-transform hover:rotate-0"
                 />
               </motion.div>
-              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+
+              {/* Card 2 - Middle */}
+              <motion.div
+                initial={{ opacity: 0, y: 30, rotate: 2 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="md:mt-8"
+              >
                 <GradientBorderCard
                   icon={DollarSign}
                   title="300-700€"
                   description="pro Drohne"
-                  className="text-center"
+                  className="text-center transform transition-transform hover:rotate-0"
                 />
               </motion.div>
-              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+
+              {/* Card 3 - Bottom */}
+              <motion.div
+                initial={{ opacity: 0, y: 30, rotate: -2 }}
+                whileInView={{ opacity: 1, y: 0, rotate: -1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="md:mt-16"
+              >
                 <GradientBorderCard
                   icon={Zap}
                   title="100+ km/h"
                   description="Angriffsgeschwindigkeit"
-                  className="text-center"
+                  className="text-center transform transition-transform hover:rotate-0"
                 />
               </motion.div>
-            </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="glass-card"
+              transition={{ delay: 0.5 }}
+              className="glass-card mt-12 max-w-4xl mx-auto"
             >
               <p className="text-lg text-white-secondary mb-4 leading-relaxed">
                 <span className="font-semibold text-white-primary">Bestehende Systeme?</span> Zu schwer, zu teuer, zu langsam.
@@ -211,8 +249,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Solution Section - Sticky Image + Vertical Timeline */}
-      <section className="section-padding bg-gradient-to-b from-black-secondary to-black-primary">
+      {/* Solution Section - Horizontal Scroll Cards + Large Image */}
+      <section className="section-padding bg-gradient-to-b from-black-primary to-black-secondary">
         <div className="container-custom">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -227,123 +265,104 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-center text-white-secondary mb-16 max-w-3xl mx-auto"
+            className="text-xl text-center text-white-secondary mb-12 max-w-3xl mx-auto"
           >
             Das erste dezentrale Anti-FPV-System für mobile Infanterie.<br />
             Entwickelt für die härtesten Einsatzszenarien.
           </motion.p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-16 items-start max-w-6xl mx-auto">
-            {/* Left: Sticky Product Image */}
+          {/* Horizontal Scroll Cards */}
+          <div className="relative mb-16 overflow-hidden">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="lg:sticky lg:top-32 image-container"
+              className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-4 md:px-0"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              <Image
-                src="/images/interceptor-product.webp"
-                alt="Herakles Interceptor"
-                width={800}
-                height={800}
-                className="rounded-xl shadow-2xl image-zoom"
-                placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWExYTFhIi8+PC9zdmc+"
-              />
-            </motion.div>
-
-            {/* Right: Vertical Timeline */}
-            <div className="space-y-8 relative">
-              {/* Vertical Orange Line */}
-              <div className="absolute left-6 top-8 bottom-8 w-[2px] bg-gradient-to-b from-orange-primary via-orange-primary/50 to-transparent hidden md:block" />
-
-              {/* Step 1: Autonom */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="relative"
-              >
+              {/* Card 1 */}
+              <div className="min-w-[280px] md:min-w-[320px] snap-center">
                 <GlassmorphismCard
                   icon={Target}
                   title="Autonom"
                   description="KI-gestütztes Tracking und Abfangen – keine Funkverbindung nötig nach Launch"
-                  className="ml-0 md:ml-16"
                 >
-                  <div className="absolute left-0 top-4 w-12 h-12 rounded-full bg-orange-primary/20 border-4 border-orange-primary flex items-center justify-center hidden md:flex">
+                  <div className="w-12 h-12 rounded-full bg-orange-primary/20 border-2 border-orange-primary flex items-center justify-center">
                     <span className="text-orange-primary font-bold text-lg">1</span>
                   </div>
                 </GlassmorphismCard>
-              </motion.div>
+              </div>
 
-              {/* Step 2: Kosteneffizient */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="relative"
-              >
+              {/* Card 2 */}
+              <div className="min-w-[280px] md:min-w-[320px] snap-center">
                 <GlassmorphismCard
                   icon={DollarSign}
                   title="Kosteneffizient"
                   description="Bruchteil der Kosten etablierter Systeme, kein teurer Sprengkopf"
-                  className="ml-0 md:ml-16"
                 >
-                  <div className="absolute left-0 top-4 w-12 h-12 rounded-full bg-orange-primary/20 border-4 border-orange-primary flex items-center justify-center hidden md:flex">
+                  <div className="w-12 h-12 rounded-full bg-orange-primary/20 border-2 border-orange-primary flex items-center justify-center">
                     <span className="text-orange-primary font-bold text-lg">2</span>
                   </div>
                 </GlassmorphismCard>
-              </motion.div>
+              </div>
 
-              {/* Step 3: Dezentral */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="relative"
-              >
+              {/* Card 3 */}
+              <div className="min-w-[280px] md:min-w-[320px] snap-center">
                 <GlassmorphismCard
                   icon={Shield}
                   title="Dezentral"
                   description="Schutz für Schützengräben, FOBs, Konvois – ohne schweres Gerät"
-                  className="ml-0 md:ml-16"
                 >
-                  <div className="absolute left-0 top-4 w-12 h-12 rounded-full bg-orange-primary/20 border-4 border-orange-primary flex items-center justify-center hidden md:flex">
+                  <div className="w-12 h-12 rounded-full bg-orange-primary/20 border-2 border-orange-primary flex items-center justify-center">
                     <span className="text-orange-primary font-bold text-lg">3</span>
                   </div>
                 </GlassmorphismCard>
-              </motion.div>
+              </div>
 
-              {/* Step 4: Schnell */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="relative"
-              >
+              {/* Card 4 */}
+              <div className="min-w-[280px] md:min-w-[320px] snap-center">
                 <GlassmorphismCard
                   icon={Rocket}
                   title="Schnell"
                   description="Hit-to-Kill-Prinzip mit kinetischer Energie bei frontaler Kollision"
-                  className="ml-0 md:ml-16"
                 >
-                  <div className="absolute left-0 top-4 w-12 h-12 rounded-full bg-orange-primary/20 border-4 border-orange-primary flex items-center justify-center hidden md:flex">
+                  <div className="w-12 h-12 rounded-full bg-orange-primary/20 border-2 border-orange-primary flex items-center justify-center">
                     <span className="text-orange-primary font-bold text-lg">4</span>
                   </div>
                 </GlassmorphismCard>
-              </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Scroll Hint */}
+            <div className="text-center mt-4 md:hidden">
+              <p className="text-sm text-white-secondary">← Swipe für mehr →</p>
             </div>
           </div>
+
+          {/* Large Product Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto image-container"
+          >
+            <Image
+              src="/images/interceptor-product.webp"
+              alt="Herakles Interceptor"
+              width={1200}
+              height={900}
+              className="rounded-xl shadow-2xl image-zoom"
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI5MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
+            />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-16 max-w-3xl mx-auto text-center"
+            className="mt-12 max-w-3xl mx-auto text-center"
           >
             <p className="text-lg text-white-secondary leading-relaxed mb-6">
               <span className="font-semibold text-white-primary">Kein Sprengkopf.</span> Keine Funkverbindung nach Launch. Keine teuren Raketen.<br />
@@ -352,6 +371,80 @@ export default function Home() {
             <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
               Mehr zur Technologie
             </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Technical Advantages - Bento Grid */}
+      <section className="section-padding bg-black-primary">
+        <div className="container-custom">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold mb-12 text-white-primary text-center"
+          >
+            Technische Vorteile
+          </motion.h2>
+
+          {/* Bento Grid: 1 Large + 4 Small */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.1 }
+              }
+            }}
+          >
+            {/* Large Feature - spans 2 rows on md+ */}
+            <motion.div
+              variants={{ hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}
+              className="md:row-span-2"
+            >
+              <GradientBorderCard
+                icon={Eye}
+                title="KI-Gestützte Erkennung"
+                description="Modernste Computer Vision Algorithmen identifizieren und klassifizieren FPV-Drohnen in Echtzeit. Neuronale Netze trainiert auf tausenden Drohnen-Signaturen für präzise Zielerfassung auch bei hohen Geschwindigkeiten und schwierigen Lichtverhältnissen."
+              />
+            </motion.div>
+
+            {/* Small Cards */}
+            <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+              <GradientBorderCard
+                icon={Clock}
+                title="Reaktionszeit"
+                description="Unter 4 Minuten von Detektion bis zum Abfang"
+              />
+            </motion.div>
+
+            <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+              <GradientBorderCard
+                icon={Radio}
+                title="EW-Resistent"
+                description="Keine Funkverbindung nach Launch erforderlich"
+              />
+            </motion.div>
+
+            <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+              <GradientBorderCard
+                icon={Cpu}
+                title="Edge Computing"
+                description="Onboard-Verarbeitung für minimale Latenz"
+              />
+            </motion.div>
+
+            <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+              <GradientBorderCard
+                icon={Battery}
+                title="Energieeffizient"
+                description="Optimierter Stromverbrauch für Extended Operations"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
