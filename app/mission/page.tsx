@@ -191,28 +191,48 @@ export default function MissionPage() {
             >
               Unser Ansatz
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              <GradientBorderCard
-                icon={Zap}
-                title="Dezentral"
-                description="Herakles ist das erste dezentrale System für Infanterie ohne schweres Gerät. Schutz für Schützengräben, FOBs und Konvois ohne Panzerung."
-              />
-              <GradientBorderCard
-                icon={DollarSign}
-                title="Kosteneffizient"
-                description="Intelligente, opferbare Masse zu einem Bruchteil der Kosten etablierter Systeme. Kein teurer Sprengkopf, nur kinetische Energie."
-              />
-              <GradientBorderCard
-                icon={Brain}
-                title="Autonom"
-                description="KI-gestütztes Tracking und autonomer Abfang. Operator gibt nur Startfreigabe, danach vollständig autonom."
-              />
-              <GradientBorderCard
-                icon={Shield}
-                title="EW-Resistent"
-                description="Keine Funkverbindung zum Boden nach Launch erforderlich. Widerstandsfähig gegen elektronische Gegenmaßnahmen."
-              />
-            </div>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.15 }
+                }
+              }}
+            >
+              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+                <GradientBorderCard
+                  icon={Zap}
+                  title="Dezentral"
+                  description="Herakles ist das erste dezentrale System für Infanterie ohne schweres Gerät. Schutz für Schützengräben, FOBs und Konvois ohne Panzerung."
+                />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+                <GradientBorderCard
+                  icon={DollarSign}
+                  title="Kosteneffizient"
+                  description="Intelligente, opferbare Masse zu einem Bruchteil der Kosten etablierter Systeme. Kein teurer Sprengkopf, nur kinetische Energie."
+                />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+                <GradientBorderCard
+                  icon={Brain}
+                  title="Autonom"
+                  description="KI-gestütztes Tracking und autonomer Abfang. Operator gibt nur Startfreigabe, danach vollständig autonom."
+                />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+                <GradientBorderCard
+                  icon={Shield}
+                  title="EW-Resistent"
+                  description="Keine Funkverbindung zum Boden nach Launch erforderlich. Widerstandsfähig gegen elektronische Gegenmaßnahmen."
+                />
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 

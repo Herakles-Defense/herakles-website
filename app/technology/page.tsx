@@ -9,6 +9,7 @@ import Button from "@/components/Button";
 import GlassmorphismCard from "@/components/GlassmorphismCard";
 import MinimalLineCard from "@/components/MinimalLineCard";
 import GradientBorderCard from "@/components/GradientBorderCard";
+import CountUp from "@/components/CountUp";
 
 export default function TechnologyPage() {
   return (
@@ -116,38 +117,62 @@ export default function TechnologyPage() {
                 Wir haben gefragt: <span className="font-bold text-orange-primary">Was braucht man wirklich, um FPV-Drohnen zu stoppen?</span>
               </motion.p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <GradientBorderCard
-                  icon={Eye}
-                  title="Früherkennung"
-                  description="Bedrohung detektieren, bevor sie nah ist"
-                />
-                <GradientBorderCard
-                  icon={Gauge}
-                  title="Geschwindigkeit"
-                  description="Schnell genug, um FPV-Drohnen einzuholen"
-                />
-                <GradientBorderCard
-                  icon={Brain}
-                  title="Autonomie"
-                  description="Keine Funkverbindung (EW-Risiko)"
-                />
-                <GradientBorderCard
-                  icon={DollarSign}
-                  title="Kosteneffizienz"
-                  description="Opferbare Masse, kein teurer Sprengkopf"
-                />
-                <GradientBorderCard
-                  icon={Users}
-                  title="Mobilität"
-                  description="Leicht genug für Infanterie ohne schweres Gerät"
-                />
-                <GradientBorderCard
-                  icon={ShieldCheck}
-                  title="EW-Resistent"
-                  description="Funktioniert auch bei Störung"
-                />
-              </div>
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.1 }
+                  }
+                }}
+              >
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                  <GradientBorderCard
+                    icon={Eye}
+                    title="Früherkennung"
+                    description="Bedrohung detektieren, bevor sie nah ist"
+                  />
+                </motion.div>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                  <GradientBorderCard
+                    icon={Gauge}
+                    title="Geschwindigkeit"
+                    description="Schnell genug, um FPV-Drohnen einzuholen"
+                  />
+                </motion.div>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                  <GradientBorderCard
+                    icon={Brain}
+                    title="Autonomie"
+                    description="Keine Funkverbindung (EW-Risiko)"
+                  />
+                </motion.div>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                  <GradientBorderCard
+                    icon={DollarSign}
+                    title="Kosteneffizienz"
+                    description="Opferbare Masse, kein teurer Sprengkopf"
+                  />
+                </motion.div>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                  <GradientBorderCard
+                    icon={Users}
+                    title="Mobilität"
+                    description="Leicht genug für Infanterie ohne schweres Gerät"
+                  />
+                </motion.div>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                  <GradientBorderCard
+                    icon={ShieldCheck}
+                    title="EW-Resistent"
+                    description="Funktioniert auch bei Störung"
+                  />
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -163,28 +188,46 @@ export default function TechnologyPage() {
             >
               Dreistufiges Abwehrkonzept
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <GlassmorphismCard
-                title="Früherkennung"
-                description="KI-gestützte akustische und visuelle Sensorik detektiert feindliche FPV-Drohnen bereits aus großer Entfernung (500m+). Das System analysiert charakteristische akustische Signaturen und visuelle Muster in Echtzeit."
-              >
-                <div className="text-orange-primary text-5xl font-bold mb-4">1</div>
-              </GlassmorphismCard>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.2 }
+                }
+              }}
+            >
+              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}>
+                <GlassmorphismCard
+                  title="Früherkennung"
+                  description="KI-gestützte akustische und visuelle Sensorik detektiert feindliche FPV-Drohnen bereits aus großer Entfernung (500m+). Das System analysiert charakteristische akustische Signaturen und visuelle Muster in Echtzeit."
+                >
+                  <div className="text-orange-primary text-5xl font-bold mb-4">1</div>
+                </GlassmorphismCard>
+              </motion.div>
 
-              <GlassmorphismCard
-                title="Richtungsbestimmung"
-                description="Nach Detektion zeigt das System die ungefähre Richtung der Bedrohung. Operator trifft die finale Entscheidung und gibt Startfreigabe per Knopfdruck."
-              >
-                <div className="text-orange-primary text-5xl font-bold mb-4">2</div>
-              </GlassmorphismCard>
+              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}>
+                <GlassmorphismCard
+                  title="Richtungsbestimmung"
+                  description="Nach Detektion zeigt das System die ungefähre Richtung der Bedrohung. Operator trifft die finale Entscheidung und gibt Startfreigabe per Knopfdruck."
+                >
+                  <div className="text-orange-primary text-5xl font-bold mb-4">2</div>
+                </GlassmorphismCard>
+              </motion.div>
 
-              <GlassmorphismCard
-                title="Autonomer Abfang"
-                description="Nach dem Launch operiert der Interceptor vollständig autonom. Edge-AI übernimmt visuelles Tracking, Verfolgung und Abfang-Manöver. Keine Funkverbindung erforderlich."
-              >
-                <div className="text-orange-primary text-5xl font-bold mb-4">3</div>
-              </GlassmorphismCard>
-            </div>
+              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}>
+                <GlassmorphismCard
+                  title="Autonomer Abfang"
+                  description="Nach dem Launch operiert der Interceptor vollständig autonom. Edge-AI übernimmt visuelles Tracking, Verfolgung und Abfang-Manöver. Keine Funkverbindung erforderlich."
+                >
+                  <div className="text-orange-primary text-5xl font-bold mb-4">3</div>
+                </GlassmorphismCard>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
@@ -307,48 +350,54 @@ export default function TechnologyPage() {
             >
               Technische Spezifikationen
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.1 }
+                }
+              }}
+            >
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0 }}
+                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
                 className="glass-card text-center"
               >
                 <h4 className="text-orange-primary font-bold mb-3 text-lg font-mono">Geschwindigkeit</h4>
-                <p className="text-3xl font-bold text-white-primary font-mono">120-160 km/h</p>
+                <p className="text-3xl font-bold text-white-primary font-mono">
+                  <CountUp end={120} duration={2} className="font-mono" />-<CountUp end={160} duration={2.2} className="font-mono" /> km/h
+                </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
+                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
                 className="glass-card text-center"
               >
                 <h4 className="text-orange-primary font-bold mb-3 text-lg font-mono">Flugzeit</h4>
-                <p className="text-3xl font-bold text-white-primary font-mono">4+ Minuten</p>
+                <p className="text-3xl font-bold text-white-primary font-mono">
+                  <CountUp end={4} duration={1.5} suffix="+ Minuten" className="font-mono" />
+                </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
+                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
                 className="glass-card text-center"
               >
                 <h4 className="text-orange-primary font-bold mb-3 text-lg font-mono">Latenz</h4>
-                <p className="text-3xl font-bold text-white-primary font-mono">&lt; 50 ms</p>
+                <p className="text-3xl font-bold text-white-primary font-mono">
+                  <CountUp end={50} duration={1.8} prefix="< " suffix=" ms" className="font-mono" />
+                </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
+                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
                 className="glass-card text-center"
               >
                 <h4 className="text-orange-primary font-bold mb-3 text-lg font-mono">KI-Tracking</h4>
                 <p className="text-3xl font-bold text-white-primary font-mono">Edge-AI</p>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </section>
 

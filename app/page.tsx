@@ -144,26 +144,44 @@ export default function Home() {
               Die Fakten
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <GradientBorderCard
-                icon={TrendingUp}
-                title="42%"
-                description="aller Fahrzeugverluste in der Ukraine: FPV-Kamikaze-Drohnen"
-                className="text-center"
-              />
-              <GradientBorderCard
-                icon={DollarSign}
-                title="300-700€"
-                description="pro Drohne"
-                className="text-center"
-              />
-              <GradientBorderCard
-                icon={Zap}
-                title="100+ km/h"
-                description="Angriffsgeschwindigkeit"
-                className="text-center"
-              />
-            </div>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.15 }
+                }
+              }}
+            >
+              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+                <GradientBorderCard
+                  icon={TrendingUp}
+                  title="42%"
+                  description="aller Fahrzeugverluste in der Ukraine: FPV-Kamikaze-Drohnen"
+                  className="text-center"
+                />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+                <GradientBorderCard
+                  icon={DollarSign}
+                  title="300-700€"
+                  description="pro Drohne"
+                  className="text-center"
+                />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
+                <GradientBorderCard
+                  icon={Zap}
+                  title="100+ km/h"
+                  description="Angriffsgeschwindigkeit"
+                  className="text-center"
+                />
+              </motion.div>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -225,34 +243,57 @@ export default function Home() {
             </motion.div>
 
             {/* Features - Using MinimalLineCards */}
-            <div className="order-1 lg:order-2 space-y-4">
-              <MinimalLineCard
-                icon={CheckCircle}
-                title="Autonom"
-                description="KI-gestütztes Tracking und Abfangen – keine Funkverbindung nötig nach Launch"
-              />
-              <MinimalLineCard
-                icon={CheckCircle}
-                title="Kosteneffizient"
-                description="Bruchteil der Kosten etablierter Systeme, kein teurer Sprengkopf"
-              />
-              <MinimalLineCard
-                icon={CheckCircle}
-                title="Dezentral"
-                description="Schutz für Schützengräben, FOBs, Konvois – ohne schweres Gerät"
-              />
-              <MinimalLineCard
-                icon={CheckCircle}
-                title="Schnell"
-                description="Hit-to-Kill-Prinzip mit kinetischer Energie bei frontaler Kollision"
-              />
+            <motion.div
+              className="order-1 lg:order-2 space-y-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.12 }
+                }
+              }}
+            >
+              <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
+                <MinimalLineCard
+                  icon={CheckCircle}
+                  title="Autonom"
+                  description="KI-gestütztes Tracking und Abfangen – keine Funkverbindung nötig nach Launch"
+                />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
+                <MinimalLineCard
+                  icon={CheckCircle}
+                  title="Kosteneffizient"
+                  description="Bruchteil der Kosten etablierter Systeme, kein teurer Sprengkopf"
+                />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
+                <MinimalLineCard
+                  icon={CheckCircle}
+                  title="Dezentral"
+                  description="Schutz für Schützengräben, FOBs, Konvois – ohne schweres Gerät"
+                />
+              </motion.div>
+              <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
+                <MinimalLineCard
+                  icon={CheckCircle}
+                  title="Schnell"
+                  description="Hit-to-Kill-Prinzip mit kinetischer Energie bei frontaler Kollision"
+                />
+              </motion.div>
 
-              <div className="pt-6">
+              <motion.div
+                className="pt-6"
+                variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}
+              >
                 <Button variant="primary" size="md" icon={ArrowRight} href="/technology">
                   Mehr zur Technologie
                 </Button>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
           <motion.div
