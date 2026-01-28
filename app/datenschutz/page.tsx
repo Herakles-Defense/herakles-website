@@ -176,7 +176,7 @@ export default function DatenschutzPage() {
                       </p>
                       <p className="mt-3">
                         Telefon: +49 171 1061038<br />
-                        E-Mail: info@hiveguard.com
+                        E-Mail: info@herakles-defense.com
                       </p>
                     </div>
                     <p className="leading-relaxed mb-6 text-sm">
@@ -285,8 +285,8 @@ export default function DatenschutzPage() {
                 </h3>
                 <p className="text-white-secondary leading-relaxed">
                   Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten wenden Sie sich bitte an:{" "}
-                  <a href="mailto:info@hiveguard.com" className="text-orange-primary hover:text-orange-hover transition-colors">
-                    info@hiveguard.com
+                  <a href="mailto:info@herakles-defense.com" className="text-orange-primary hover:text-orange-hover transition-colors">
+                    info@herakles-defense.com
                   </a>
                 </p>
               </div>

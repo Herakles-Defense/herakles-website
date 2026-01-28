@@ -73,8 +73,8 @@ export default function ImpressumPage() {
                     <Mail className="text-orange-primary flex-shrink-0" size={20} />
                     <div>
                       <p className="text-sm text-white-secondary/70 mb-1">E-Mail</p>
-                      <a href="mailto:info@hiveguard.com" className="text-white-primary hover:text-orange-primary transition-colors">
-                        info@hiveguard.com
+                      <a href="mailto:info@herakles-defense.com" className="text-white-primary hover:text-orange-primary transition-colors">
+                        info@herakles-defense.com
                       </a>
                     </div>
                   </div>
@@ -173,8 +173,8 @@ export default function ImpressumPage() {
                 </h3>
                 <p className="text-white-secondary leading-relaxed">
                   Bei Fragen zum Impressum kontaktieren Sie uns bitte unter:{" "}
-                  <a href="mailto:info@hiveguard.com" className="text-orange-primary hover:text-orange-hover transition-colors">
-                    info@hiveguard.com
+                  <a href="mailto:info@herakles-defense.com" className="text-orange-primary hover:text-orange-hover transition-colors">
+                    info@herakles-defense.com
                   </a>
                 </p>
               </div>

@@ -130,42 +130,42 @@ export default function TechnologyPage() {
                   }
                 }}
               >
-                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className="h-full">
                   <GradientBorderCard
                     icon={Eye}
                     title="Früherkennung"
                     description="Bedrohung detektieren, bevor sie nah ist"
                   />
                 </motion.div>
-                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className="h-full">
                   <GradientBorderCard
                     icon={Gauge}
                     title="Geschwindigkeit"
                     description="Schnell genug, um FPV-Drohnen einzuholen"
                   />
                 </motion.div>
-                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className="h-full">
                   <GradientBorderCard
                     icon={Brain}
                     title="Autonomie"
                     description="Keine Funkverbindung (EW-Risiko)"
                   />
                 </motion.div>
-                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className="h-full">
                   <GradientBorderCard
                     icon={DollarSign}
                     title="Kosteneffizienz"
                     description="Opferbare Masse, kein teurer Sprengkopf"
                   />
                 </motion.div>
-                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className="h-full">
                   <GradientBorderCard
                     icon={Users}
                     title="Mobilität"
                     description="Leicht genug für Infanterie ohne schweres Gerät"
                   />
                 </motion.div>
-                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className="h-full">
                   <GradientBorderCard
                     icon={ShieldCheck}
                     title="EW-Resistent"
@@ -201,7 +201,7 @@ export default function TechnologyPage() {
                 }
               }}
             >
-              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}>
+              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }} className="h-full">
                 <GlassmorphismCard
                   title="Früherkennung"
                   description="KI-gestützte akustische und visuelle Sensorik detektiert feindliche FPV-Drohnen bereits aus großer Entfernung (500m+). Das System analysiert charakteristische akustische Signaturen und visuelle Muster in Echtzeit."
@@ -210,7 +210,7 @@ export default function TechnologyPage() {
                 </GlassmorphismCard>
               </motion.div>
 
-              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}>
+              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }} className="h-full">
                 <GlassmorphismCard
                   title="Richtungsbestimmung"
                   description="Nach Detektion zeigt das System die ungefähre Richtung der Bedrohung. Operator trifft die finale Entscheidung und gibt Startfreigabe per Knopfdruck."
@@ -219,7 +219,7 @@ export default function TechnologyPage() {
                 </GlassmorphismCard>
               </motion.div>
 
-              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}>
+              <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }} className="h-full">
                 <GlassmorphismCard
                   title="Autonomer Abfang"
                   description="Nach dem Launch operiert der Interceptor vollständig autonom. Edge-AI übernimmt visuelles Tracking, Verfolgung und Abfang-Manöver. Keine Funkverbindung erforderlich."

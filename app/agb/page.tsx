@@ -42,8 +42,8 @@ export default function AGBPage() {
               <section>
                 <p className="leading-relaxed">
                   Diese Allgemeinen Geschäftsbedingungen enthalten die Regeln und Bestimmungen für die Nutzung der Website von Herakles Defense unter{" "}
-                  <a href="https://herakles-website.vercel.app" className="text-orange-primary hover:text-orange-hover transition-colors">
-                    herakles-website.vercel.app
+                  <a href="https://herakles-defense.com" className="text-orange-primary hover:text-orange-hover transition-colors">
+                    herakles-defense.com
                   </a>.
                 </p>
                 <div className="bg-orange-primary/10 p-4 rounded-lg mt-4 border-l-4 border-orange-primary">
@@ -270,8 +270,8 @@ export default function AGBPage() {
                 </h3>
                 <p className="text-white-secondary leading-relaxed">
                   Sollten Sie Fragen zu unseren AGBs haben, kontaktieren Sie uns bitte unter:{" "}
-                  <a href="mailto:info@hiveguard.com" className="text-orange-primary hover:text-orange-hover transition-colors">
-                    info@hiveguard.com
+                  <a href="mailto:info@herakles-defense.com" className="text-orange-primary hover:text-orange-hover transition-colors">
+                    info@herakles-defense.com
                   </a>
                 </p>
               </div>

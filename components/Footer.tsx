@@ -101,11 +101,11 @@ export default function Footer() {
               <li className="flex items-center gap-2 text-white-secondary">
                 <Mail size={16} className="text-orange-primary" aria-hidden="true" />
                 <a
-                  href="mailto:info@hiveguard.com"
+                  href="mailto:info@herakles-defense.com"
                   className="hover:text-orange-primary transition-colors"
-                  aria-label="Email an info@hiveguard.com senden"
+                  aria-label="Email an info@herakles-defense.com senden"
                 >
-                  info@hiveguard.com
+                  info@herakles-defense.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-white-secondary">

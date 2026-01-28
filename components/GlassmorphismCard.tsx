@@ -23,7 +23,7 @@ export default function GlassmorphismCard({
 }: GlassmorphismCardProps) {
   return (
     <motion.div
-      className={`glass-card group ${className}`}
+      className={`glass-card group h-full flex flex-col ${className}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -35,19 +35,19 @@ export default function GlassmorphismCard({
         </div>
       )}
 
+      {children && (
+        <div className="mb-4">
+          {children}
+        </div>
+      )}
+
       <h3 className="text-2xl font-bold mb-3 text-white-primary">
         {title}
       </h3>
 
-      <p className="text-white-secondary leading-relaxed">
+      <p className="text-white-secondary leading-relaxed flex-grow">
         {description}
       </p>
-
-      {children && (
-        <div className="mt-4">
-          {children}
-        </div>
-      )}
     </motion.div>
   )
 }

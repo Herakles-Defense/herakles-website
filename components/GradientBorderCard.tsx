@@ -23,7 +23,7 @@ export default function GradientBorderCard({
 }: GradientBorderCardProps) {
   return (
     <motion.div
-      className={`relative rounded-xl p-[2px] group ${className}`}
+      className={`relative rounded-xl p-[2px] group h-full ${className}`}
       style={{
         background: 'linear-gradient(135deg, var(--color-orange-primary), transparent)'
       }}
@@ -33,7 +33,7 @@ export default function GradientBorderCard({
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.02 }}
     >
-      <div className="bg-black-secondary rounded-xl p-8 h-full">
+      <div className="bg-black-secondary rounded-xl p-8 h-full flex flex-col">
         {Icon && (
           <div className={`mb-4 ${iconColor} transition-transform duration-300 group-hover:rotate-6`}>
             <Icon size={32} strokeWidth={1.5} />
@@ -44,7 +44,7 @@ export default function GradientBorderCard({
           {title}
         </h3>
 
-        <p className="text-white-secondary leading-relaxed">
+        <p className="text-white-secondary leading-relaxed flex-grow">
           {description}
         </p>
 

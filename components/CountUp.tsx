@@ -54,7 +54,7 @@ export default function CountUp({
   }, [isInView, end, duration])
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={`tabular-nums ${className}`}>
       {prefix}
       {count.toFixed(decimals)}
       {suffix}
