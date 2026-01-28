@@ -1,11 +1,12 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { Zap, DollarSign, Brain, Shield, ArrowRight, Mail } from "lucide-react";
+import { Zap, DollarSign, Brain, Shield, ArrowRight, Mail, AlertTriangle, Target } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import GradientBorderCard from "@/components/GradientBorderCard";
+import TimelineItem from "@/components/TimelineItem";
 
 export default function MissionPage() {
   return (
@@ -36,111 +37,106 @@ export default function MissionPage() {
           </div>
         </section>
 
-        {/* Die Herausforderung */}
+        {/* Die Bedrohung verstehen - Timeline */}
         <section className="section-padding bg-black-secondary">
-          <div className="container-custom max-w-4xl">
+          <div className="container-custom max-w-5xl">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold mb-8 text-white-primary"
+              className="text-3xl md:text-5xl font-bold mb-16 text-white-primary text-center"
             >
-              Die Herausforderung
+              Die Bedrohung verstehen
             </motion.h2>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6 text-lg text-white-secondary leading-relaxed"
-            >
-              <p>
-                FPV-Kamikaze-Drohnen haben sich in den letzten drei Jahren zum <span className="text-orange-primary font-semibold">dominierenden taktischen Kampfmittel</span> asymmetrischer Konflikte entwickelt.
-                Der Ukrainekonflikt zeigt dies eindrucksvoll: Improvisierte FPV-Kamikazedrohnen verursachen über 42% aller verifizierten Fahrzeugverluste.
-              </p>
-              <p>
-                <span className="font-semibold text-white-primary">Die technischen Hürden sind niedrig:</span>
-              </p>
-              <ul className="list-none space-y-2 ml-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">•</span>
-                  <span>Komponenten kommerziell verfügbar (DJI, Tarot, etc.)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">•</span>
-                  <span>Kosten: 300-700 Euro pro Einheit</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">•</span>
-                  <span>Reichweite: 5-10 km (analog-video)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">•</span>
-                  <span>Geschwindigkeit: 100-120 km/h</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">•</span>
-                  <span>Einfache Bedienung: FPV-Piloten mit Gaming-Hintergrund</span>
-                </li>
-              </ul>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-8 glass-card border-l-4 border-orange-primary"
-            >
-              <p className="font-semibold text-white-primary text-lg mb-3">Die Wirksamkeit ist bewiesen:</p>
-              <ul className="list-none space-y-2">
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">→</span>
-                  <span className="text-white-secondary">Tausende dokumentierte Treffer auf Panzer, Fahrzeuge, Personal</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">→</span>
-                  <span className="text-white-secondary">Kosten-Asymmetrie: 300€ Drohne zerstört 4-Mio-€-Panzer</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">→</span>
-                  <span className="text-white-secondary">Präzision: Piloten können spezifische Schwachstellen anvisieren</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-orange-primary font-bold">→</span>
-                  <span className="text-white-secondary">Psychologische Wirkung: Ständige Bedrohung, keine sichere Zone</span>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-        </section>
+            {/* Timeline Container */}
+            <div className="space-y-0">
+              <TimelineItem
+                number="1"
+                icon={AlertTriangle}
+                title="Die Herausforderung"
+                description={
+                  <div className="space-y-4">
+                    <p>
+                      FPV-Kamikaze-Drohnen haben sich in den letzten drei Jahren zum <span className="text-orange-primary font-semibold">dominierenden taktischen Kampfmittel</span> asymmetrischer Konflikte entwickelt.
+                      Der Ukrainekonflikt zeigt dies eindrucksvoll: Improvisierte FPV-Kamikazedrohnen verursachen über 42% aller verifizierten Fahrzeugverluste.
+                    </p>
+                    <div>
+                      <p className="font-semibold text-white-primary mb-3">Die technischen Hürden sind niedrig:</p>
+                      <ul className="list-none space-y-2">
+                        <li className="flex items-start gap-2">
+                          <span className="text-orange-primary font-bold">•</span>
+                          <span>Komponenten kommerziell verfügbar (DJI, Tarot, etc.)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-orange-primary font-bold">•</span>
+                          <span>Kosten: 300-700 Euro pro Einheit</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-orange-primary font-bold">•</span>
+                          <span>Reichweite: 5-10 km (analog-video)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-orange-primary font-bold">•</span>
+                          <span>Geschwindigkeit: 100-120 km/h</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-orange-primary font-bold">•</span>
+                          <span>Einfache Bedienung: FPV-Piloten mit Gaming-Hintergrund</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                }
+              />
 
-        {/* Warum es nicht bei der Ukraine bleiben wird */}
-        <section className="section-padding bg-black-primary">
-          <div className="container-custom max-w-4xl">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold mb-8 text-white-primary"
-            >
-              Warum es nicht bei der Ukraine bleiben wird
-            </motion.h2>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6 text-lg text-white-secondary leading-relaxed"
-            >
-              <p>
-                Während derzeit FPV-Drohnen überwiegend in der Ukraine eingesetzt werden, beobachtet die Welt aufmerksam.
-                Die Taktik ist dokumentiert. Die Hardware ist verfügbar. Die Wirksamkeit ist bewiesen.
-              </p>
-              <div className="glass-card border-2 border-red-500">
-                <p className="text-xl font-bold text-red-500">
-                  Es ist unausweichlich, dass zukünftige nichtstaatliche Akteure, Terrorgruppen und hybride Gegner dieses Konzept übernehmen werden.
-                  Die Frage ist nicht ob, sondern wann.
-                </p>
-              </div>
-            </motion.div>
+              <TimelineItem
+                number="2"
+                icon={Target}
+                title="Die Wirksamkeit ist bewiesen"
+                description={
+                  <ul className="list-none space-y-3">
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-primary font-bold">→</span>
+                      <span>Tausende dokumentierte Treffer auf Panzer, Fahrzeuge, Personal</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-primary font-bold">→</span>
+                      <span>Kosten-Asymmetrie: 300€ Drohne zerstört 4-Mio-€-Panzer</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-primary font-bold">→</span>
+                      <span>Präzision: Piloten können spezifische Schwachstellen anvisieren</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-primary font-bold">→</span>
+                      <span>Psychologische Wirkung: Ständige Bedrohung, keine sichere Zone</span>
+                    </li>
+                  </ul>
+                }
+              />
+
+              <TimelineItem
+                number="3"
+                icon={Shield}
+                title="Warum es nicht bei der Ukraine bleiben wird"
+                description={
+                  <div className="space-y-4">
+                    <p>
+                      Während derzeit FPV-Drohnen überwiegend in der Ukraine eingesetzt werden, beobachtet die Welt aufmerksam.
+                      Die Taktik ist dokumentiert. Die Hardware ist verfügbar. Die Wirksamkeit ist bewiesen.
+                    </p>
+                    <div className="p-4 rounded-lg border-2 border-red-500 bg-red-500/10">
+                      <p className="text-lg font-bold text-red-400">
+                        Es ist unausweichlich, dass zukünftige nichtstaatliche Akteure, Terrorgruppen und hybride Gegner dieses Konzept übernehmen werden.
+                        Die Frage ist nicht ob, sondern wann.
+                      </p>
+                    </div>
+                  </div>
+                }
+                isLast={true}
+              />
+            </div>
           </div>
         </section>
 
@@ -236,48 +232,71 @@ export default function MissionPage() {
           </div>
         </section>
 
-        {/* Vision */}
-        <section className="section-padding bg-black-secondary">
-          <div className="container-custom text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold mb-6 text-white-primary"
-            >
-              Unsere Vision
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-white-secondary max-w-3xl mx-auto mb-8 leading-relaxed"
-            >
-              Eine Zukunft, in der Soldaten und zivile Infrastruktur wirksam vor FPV-Kamikaze-Drohnen geschützt sind.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="text-2xl font-bold text-orange-primary mb-8"
-            >
-              Bevor diese Bedrohung zu einem globalen Standard wird.
-            </motion.p>
+        {/* Vision - Fullwidth Hero Style */}
+        <section className="relative section-padding-lg bg-black-primary overflow-hidden">
+          {/* Gradient Background Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-primary/10 via-black-primary to-black-secondary" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,107,53,0.15),transparent_50%)]" />
+
+          {/* Animated Grid Pattern */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: 'linear-gradient(rgba(255,107,53,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.3) 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
+          }} />
+
+          <div className="relative container-custom text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              transition={{ duration: 0.8 }}
+              className="max-w-5xl mx-auto"
             >
-              <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
-                Unsere Technologie
-              </Button>
-              <Button variant="secondary" size="lg" icon={Mail} href="/contact">
-                Kontakt aufnehmen
-              </Button>
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white-primary"
+              >
+                Unsere Vision
+              </motion.h2>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="glass-card border-2 border-orange-primary/30 mb-8 backdrop-blur-xl"
+              >
+                <p className="text-2xl md:text-3xl text-white-primary leading-relaxed font-medium">
+                  Eine Zukunft, in der Soldaten und zivile Infrastruktur wirksam vor FPV-Kamikaze-Drohnen geschützt sind.
+                </p>
+              </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="text-2xl md:text-4xl font-bold mb-12"
+              >
+                <span className="gradient-text">Bevor diese Bedrohung zu einem globalen Standard wird.</span>
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+              >
+                <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
+                  Unsere Technologie
+                </Button>
+                <Button variant="secondary" size="lg" icon={Mail} href="/contact">
+                  Kontakt aufnehmen
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </section>
