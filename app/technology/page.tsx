@@ -1,193 +1,213 @@
+'use client'
+
 import Image from "next/image";
-import Link from "next/link";
+import { motion } from "framer-motion";
+import { Radio, Zap, Shield, Rocket, Eye, Gauge, Brain, DollarSign, Users, ShieldCheck, ArrowRight, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Button from "@/components/Button";
+import GlassmorphismCard from "@/components/GlassmorphismCard";
+import MinimalLineCard from "@/components/MinimalLineCard";
+import GradientBorderCard from "@/components/GradientBorderCard";
 
 export default function TechnologyPage() {
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="min-h-screen bg-black-primary">
       <Header />
 
       <main className="pt-24">
         {/* Hero */}
         <section className="section-padding">
           <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-secondary">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl mx-auto text-center"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white-primary">
                 Technologie
               </h1>
-              <p className="text-xl md:text-2xl text-secondary/80 leading-relaxed">
+              <p className="text-xl md:text-2xl text-white-secondary leading-relaxed">
                 Intelligente, opferbare Masse gegen tödliche Bedrohungen –<br />
                 zu einem Bruchteil der Kosten etablierter Systeme.
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Why Conventional Systems Fail */}
-        <section className="section-padding bg-neutral/30">
+        <section className="section-padding bg-black-secondary">
           <div className="container-custom">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold mb-12 text-secondary text-center">
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-5xl font-bold mb-12 text-white-primary text-center"
+              >
                 Warum konventionelle Systeme versagen
-              </h2>
+              </motion.h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white p-8 rounded-lg border-l-4 border-red-500">
-                  <h3 className="text-2xl font-bold mb-4 text-secondary">Jammer & EW-Systeme</h3>
-                  <p className="text-secondary/70">
-                    Elektronische Kriegsführung kann Funksignale stören – aber FPV-Drohnen können auch manuell
-                    (analog über Video-Downlink) gesteuert werden. Sobald der Pilot das Ziel visuell hat, hilft Jamming nicht mehr.
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-lg border-l-4 border-red-500">
-                  <h3 className="text-2xl font-bold mb-4 text-secondary">Laserwaffen</h3>
-                  <p className="text-secondary/70">
-                    Theoretisch effektiv, praktisch Millionen-Investitionen. Schwere Systeme, nur für stationäre Basen geeignet.
-                    Mobile Infanterie? Keine Chance.
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-lg border-l-4 border-red-500">
-                  <h3 className="text-2xl font-bold mb-4 text-secondary">Klassische Flak / Geschütze</h3>
-                  <p className="text-secondary/70">
-                    Gegen große, langsame Drohnen? Vielleicht. Gegen 15cm-Ziele bei 110 km/h in 10m Höhe? Aussichtslos.
-                  </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-lg border-l-4 border-red-500">
-                  <h3 className="text-2xl font-bold mb-4 text-secondary">Raketenabwehr (Stinger, etc.)</h3>
-                  <p className="text-secondary/70">
-                    Ein Stinger kostet 40.000 USD. Für eine 400-Euro-Drohne. Und selbst wenn: Zu langsam für schnelle, agile FPV-Targets.
-                  </p>
-                </div>
+                <MinimalLineCard
+                  icon={Radio}
+                  title="Jammer & EW-Systeme"
+                  description="Elektronische Kriegsführung kann Funksignale stören – aber FPV-Drohnen können auch manuell (analog über Video-Downlink) gesteuert werden. Sobald der Pilot das Ziel visuell hat, hilft Jamming nicht mehr."
+                  iconColor="text-red-500"
+                />
+                <MinimalLineCard
+                  icon={Zap}
+                  title="Laserwaffen"
+                  description="Theoretisch effektiv, praktisch Millionen-Investitionen. Schwere Systeme, nur für stationäre Basen geeignet. Mobile Infanterie? Keine Chance."
+                  iconColor="text-red-500"
+                />
+                <MinimalLineCard
+                  icon={Shield}
+                  title="Klassische Flak / Geschütze"
+                  description="Gegen große, langsame Drohnen? Vielleicht. Gegen 15cm-Ziele bei 110 km/h in 10m Höhe? Aussichtslos."
+                  iconColor="text-red-500"
+                />
+                <MinimalLineCard
+                  icon={Rocket}
+                  title="Raketenabwehr (Stinger, etc.)"
+                  description="Ein Stinger kostet 40.000 USD. Für eine 400-Euro-Drohne. Und selbst wenn: Zu langsam für schnelle, agile FPV-Targets."
+                  iconColor="text-red-500"
+                />
               </div>
 
-              <div className="mt-12 bg-red-50 border-2 border-red-500 p-8 rounded-lg">
-                <p className="text-xl font-bold text-red-700 mb-4">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-12 glass-card border-2 border-red-500"
+              >
+                <p className="text-xl font-bold text-red-500 mb-4">
                   Das Ergebnis?
                 </p>
-                <p className="text-lg text-secondary">
+                <p className="text-lg text-white-primary">
                   Soldaten sterben, weil keine praktikable Lösung existiert.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Herakles: Rethought from Ground Up */}
-        <section className="section-padding">
+        <section className="section-padding bg-black-primary">
           <div className="container-custom">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 text-secondary text-center">
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-5xl font-bold mb-8 text-white-primary text-center"
+              >
                 Herakles: Von Grund auf neu gedacht
-              </h2>
-              <p className="text-xl text-center text-secondary/80 mb-12 max-w-3xl mx-auto">
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-xl text-center text-white-secondary mb-12 max-w-3xl mx-auto"
+              >
                 Wir haben nicht versucht, bestehende Systeme anzupassen.<br />
-                Wir haben gefragt: <span className="font-bold text-accent">Was braucht man wirklich, um FPV-Drohnen zu stoppen?</span>
-              </p>
+                Wir haben gefragt: <span className="font-bold text-orange-primary">Was braucht man wirklich, um FPV-Drohnen zu stoppen?</span>
+              </motion.p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white border-2 border-accent p-6 rounded-lg">
-                  <div className="text-accent text-3xl font-bold mb-3">→</div>
-                  <h3 className="text-xl font-bold text-secondary mb-2">Früherkennung</h3>
-                  <p className="text-secondary/70">
-                    Bedrohung detektieren, bevor sie nah ist
-                  </p>
-                </div>
-
-                <div className="bg-white border-2 border-accent p-6 rounded-lg">
-                  <div className="text-accent text-3xl font-bold mb-3">→</div>
-                  <h3 className="text-xl font-bold text-secondary mb-2">Geschwindigkeit</h3>
-                  <p className="text-secondary/70">
-                    Schnell genug, um FPV-Drohnen einzuholen
-                  </p>
-                </div>
-
-                <div className="bg-white border-2 border-accent p-6 rounded-lg">
-                  <div className="text-accent text-3xl font-bold mb-3">→</div>
-                  <h3 className="text-xl font-bold text-secondary mb-2">Autonomie</h3>
-                  <p className="text-secondary/70">
-                    Keine Funkverbindung (EW-Risiko)
-                  </p>
-                </div>
-
-                <div className="bg-white border-2 border-accent p-6 rounded-lg">
-                  <div className="text-accent text-3xl font-bold mb-3">→</div>
-                  <h3 className="text-xl font-bold text-secondary mb-2">Kosteneffizienz</h3>
-                  <p className="text-secondary/70">
-                    Opferbare Masse, kein teurer Sprengkopf
-                  </p>
-                </div>
-
-                <div className="bg-white border-2 border-accent p-6 rounded-lg">
-                  <div className="text-accent text-3xl font-bold mb-3">→</div>
-                  <h3 className="text-xl font-bold text-secondary mb-2">Mobilität</h3>
-                  <p className="text-secondary/70">
-                    Leicht genug für Infanterie ohne schweres Gerät
-                  </p>
-                </div>
-
-                <div className="bg-white border-2 border-accent p-6 rounded-lg">
-                  <div className="text-accent text-3xl font-bold mb-3">→</div>
-                  <h3 className="text-xl font-bold text-secondary mb-2">EW-Resistent</h3>
-                  <p className="text-secondary/70">
-                    Funktioniert auch bei Störung
-                  </p>
-                </div>
+                <GradientBorderCard
+                  icon={Eye}
+                  title="Früherkennung"
+                  description="Bedrohung detektieren, bevor sie nah ist"
+                />
+                <GradientBorderCard
+                  icon={Gauge}
+                  title="Geschwindigkeit"
+                  description="Schnell genug, um FPV-Drohnen einzuholen"
+                />
+                <GradientBorderCard
+                  icon={Brain}
+                  title="Autonomie"
+                  description="Keine Funkverbindung (EW-Risiko)"
+                />
+                <GradientBorderCard
+                  icon={DollarSign}
+                  title="Kosteneffizienz"
+                  description="Opferbare Masse, kein teurer Sprengkopf"
+                />
+                <GradientBorderCard
+                  icon={Users}
+                  title="Mobilität"
+                  description="Leicht genug für Infanterie ohne schweres Gerät"
+                />
+                <GradientBorderCard
+                  icon={ShieldCheck}
+                  title="EW-Resistent"
+                  description="Funktioniert auch bei Störung"
+                />
               </div>
             </div>
           </div>
         </section>
 
         {/* Three-Stage Defense Concept */}
-        <section className="section-padding bg-gradient-to-b from-white to-neutral/30">
+        <section className="section-padding bg-gradient-to-b from-black-secondary to-black-primary">
           <div className="container-custom">
-            <h2 className="text-3xl md:text-5xl font-bold mb-12 text-secondary text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold mb-12 text-white-primary text-center"
+            >
               Dreistufiges Abwehrkonzept
-            </h2>
+            </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="text-accent text-5xl font-bold mb-4">1</div>
-                <h3 className="text-2xl font-bold mb-4 text-secondary">Früherkennung</h3>
-                <p className="text-secondary/70 leading-relaxed">
-                  KI-gestützte akustische und visuelle Sensorik detektiert feindliche FPV-Drohnen bereits aus großer Entfernung (500m+).
-                  Das System analysiert charakteristische akustische Signaturen und visuelle Muster in Echtzeit.
-                </p>
-              </div>
+              <GlassmorphismCard
+                title="Früherkennung"
+                description="KI-gestützte akustische und visuelle Sensorik detektiert feindliche FPV-Drohnen bereits aus großer Entfernung (500m+). Das System analysiert charakteristische akustische Signaturen und visuelle Muster in Echtzeit."
+              >
+                <div className="text-orange-primary text-5xl font-bold mb-4">1</div>
+              </GlassmorphismCard>
 
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="text-accent text-5xl font-bold mb-4">2</div>
-                <h3 className="text-2xl font-bold mb-4 text-secondary">Richtungsbestimmung</h3>
-                <p className="text-secondary/70 leading-relaxed">
-                  Nach Detektion zeigt das System die ungefähre Richtung der Bedrohung.
-                  Operator trifft die finale Entscheidung und gibt Startfreigabe per Knopfdruck.
-                </p>
-              </div>
+              <GlassmorphismCard
+                title="Richtungsbestimmung"
+                description="Nach Detektion zeigt das System die ungefähre Richtung der Bedrohung. Operator trifft die finale Entscheidung und gibt Startfreigabe per Knopfdruck."
+              >
+                <div className="text-orange-primary text-5xl font-bold mb-4">2</div>
+              </GlassmorphismCard>
 
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="text-accent text-5xl font-bold mb-4">3</div>
-                <h3 className="text-2xl font-bold mb-4 text-secondary">Autonomer Abfang</h3>
-                <p className="text-secondary/70 leading-relaxed">
-                  Nach dem Launch operiert der Interceptor vollständig autonom. Edge-AI übernimmt visuelles Tracking,
-                  Verfolgung und Abfang-Manöver. Keine Funkverbindung erforderlich.
-                </p>
-              </div>
+              <GlassmorphismCard
+                title="Autonomer Abfang"
+                description="Nach dem Launch operiert der Interceptor vollständig autonom. Edge-AI übernimmt visuelles Tracking, Verfolgung und Abfang-Manöver. Keine Funkverbindung erforderlich."
+              >
+                <div className="text-orange-primary text-5xl font-bold mb-4">3</div>
+              </GlassmorphismCard>
             </div>
           </div>
         </section>
 
         {/* Visual Diagram */}
-        <section className="section-padding bg-neutral/20">
+        <section className="section-padding bg-black-secondary">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-secondary text-center">
+              <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-4xl font-bold mb-8 text-white-primary text-center"
+              >
                 So funktioniert es
-              </h2>
+              </motion.h2>
 
               {/* Tactical Diagram */}
-              <div className="bg-white p-8 rounded-lg shadow-xl border-2 border-accent">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="glass-card border-2 border-orange-primary"
+              >
                 <div className="relative w-full mb-6">
                   <Image
                     src="/images/tactical-diagram.png"
@@ -199,117 +219,173 @@ export default function TechnologyPage() {
                 </div>
 
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-secondary mb-3">Ablauf der Verteidigung</h3>
-                  <p className="text-secondary/70 leading-relaxed">
-                    <span className="font-semibold text-accent">1.</span> Feindliche FPV-Kamikaze-Drohne nähert sich mit 100+ km/h<br />
-                    <span className="font-semibold text-accent">2.</span> Herakles detektiert und alarmiert<br />
-                    <span className="font-semibold text-accent">3.</span> Operator gibt Freigabe<br />
-                    <span className="font-semibold text-accent">4.</span> Interceptor startet und verfolgt autonom<br />
-                    <span className="font-semibold text-accent">5.</span> Kinetische Kollision neutralisiert Bedrohung<br />
-                    <span className="font-semibold text-accent">6.</span> Soldat ist geschützt
+                  <h3 className="text-xl font-bold text-white-primary mb-3">Ablauf der Verteidigung</h3>
+                  <p className="text-white-secondary leading-relaxed">
+                    <span className="font-semibold text-orange-primary">1.</span> Feindliche FPV-Kamikaze-Drohne nähert sich mit 100+ km/h<br />
+                    <span className="font-semibold text-orange-primary">2.</span> Herakles detektiert und alarmiert<br />
+                    <span className="font-semibold text-orange-primary">3.</span> Operator gibt Freigabe<br />
+                    <span className="font-semibold text-orange-primary">4.</span> Interceptor startet und verfolgt autonom<br />
+                    <span className="font-semibold text-orange-primary">5.</span> Kinetische Kollision neutralisiert Bedrohung<br />
+                    <span className="font-semibold text-orange-primary">6.</span> Soldat ist geschützt
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Hit-to-Kill Principle */}
-        <section className="section-padding">
+        <section className="section-padding bg-black-primary">
           <div className="container-custom">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6 text-secondary">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white-primary">
                     Hit-to-Kill Prinzip
                   </h2>
-                  <p className="text-lg text-secondary/80 mb-6 leading-relaxed">
+                  <p className="text-lg text-white-secondary mb-6 leading-relaxed">
                     Der Herakles Interceptor trägt keinen Sprengkopf. Stattdessen neutralisiert er Ziele
                     durch kinetische Energie bei direkter Kollision.
                   </p>
 
-                  <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-lg space-y-3">
+                  <div className="glass-card border-l-4 border-orange-primary space-y-3">
                     <div className="flex items-baseline gap-3">
-                      <span className="text-accent font-bold text-lg">→</span>
-                      <span className="text-secondary/80">
-                        Kinetische Energie bei 120 km/h: <span className="font-bold text-accent">ca. 444 Joule</span>
+                      <span className="text-orange-primary font-bold text-lg">→</span>
+                      <span className="text-white-secondary">
+                        Kinetische Energie bei 120 km/h: <span className="font-bold text-orange-primary">ca. 444 Joule</span>
                       </span>
                     </div>
                     <div className="flex items-baseline gap-3">
-                      <span className="text-accent font-bold text-lg">→</span>
-                      <span className="text-secondary/80">
-                        Frontale Kollision (230 km/h relativ): <span className="font-bold text-accent">ca. 1.640 Joule</span>
+                      <span className="text-orange-primary font-bold text-lg">→</span>
+                      <span className="text-white-secondary">
+                        Frontale Kollision (230 km/h relativ): <span className="font-bold text-orange-primary">ca. 1.640 Joule</span>
                       </span>
                     </div>
                     <div className="flex items-baseline gap-3">
-                      <span className="text-accent font-bold text-lg">→</span>
-                      <span className="text-secondary/80">
+                      <span className="text-orange-primary font-bold text-lg">→</span>
+                      <span className="text-white-secondary">
                         Mehr als ausreichend für Zerstörung von Propellern und Struktur
                       </span>
                     </div>
                   </div>
 
-                  <p className="mt-6 text-lg font-semibold text-secondary">
-                    Kein teurer Sprengkopf. Keine Kollateralschäden. <span className="text-accent">Reine Physik.</span>
+                  <p className="mt-6 text-lg font-semibold text-white-primary">
+                    Kein teurer Sprengkopf. Keine Kollateralschäden. <span className="text-orange-primary">Reine Physik.</span>
                   </p>
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
                   <Image
                     src="/images/interceptor-action.png"
                     alt="Interceptor in Action"
                     width={800}
                     height={600}
-                    className="rounded-lg shadow-xl"
+                    className="rounded-xl shadow-2xl"
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Technical Specs */}
-        <section className="section-padding bg-secondary text-white">
+        <section className="section-padding bg-black-secondary">
           <div className="container-custom">
-            <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold mb-12 text-center text-white-primary"
+            >
               Technische Spezifikationen
-            </h2>
+            </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              <div className="bg-white/10 backdrop-blur p-8 rounded-lg text-center">
-                <h4 className="text-accent font-bold mb-3 text-lg">Geschwindigkeit</h4>
-                <p className="text-3xl font-bold">120-160 km/h</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur p-8 rounded-lg text-center">
-                <h4 className="text-accent font-bold mb-3 text-lg">Flugzeit</h4>
-                <p className="text-3xl font-bold">4+ Minuten</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur p-8 rounded-lg text-center">
-                <h4 className="text-accent font-bold mb-3 text-lg">Latenz</h4>
-                <p className="text-3xl font-bold">&lt; 50 ms</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur p-8 rounded-lg text-center">
-                <h4 className="text-accent font-bold mb-3 text-lg">KI-Tracking</h4>
-                <p className="text-3xl font-bold">Edge-AI</p>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 }}
+                className="glass-card text-center"
+              >
+                <h4 className="text-orange-primary font-bold mb-3 text-lg font-mono">Geschwindigkeit</h4>
+                <p className="text-3xl font-bold text-white-primary font-mono">120-160 km/h</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="glass-card text-center"
+              >
+                <h4 className="text-orange-primary font-bold mb-3 text-lg font-mono">Flugzeit</h4>
+                <p className="text-3xl font-bold text-white-primary font-mono">4+ Minuten</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="glass-card text-center"
+              >
+                <h4 className="text-orange-primary font-bold mb-3 text-lg font-mono">Latenz</h4>
+                <p className="text-3xl font-bold text-white-primary font-mono">&lt; 50 ms</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="glass-card text-center"
+              >
+                <h4 className="text-orange-primary font-bold mb-3 text-lg font-mono">KI-Tracking</h4>
+                <p className="text-3xl font-bold text-white-primary font-mono">Edge-AI</p>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="section-padding bg-gradient-to-b from-white to-neutral/30">
+        <section className="section-padding bg-gradient-to-b from-black-primary to-black-secondary">
           <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-secondary">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold mb-6 text-white-primary"
+            >
               Mehr erfahren?
-            </h2>
-            <p className="text-xl text-secondary/80 max-w-2xl mx-auto mb-8">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-white-secondary max-w-2xl mx-auto mb-8"
+            >
               Kontaktieren Sie uns für detaillierte technische Informationen.
-            </p>
-            <Link href="/mission" className="btn-primary mr-4">
-              Unsere Mission
-            </Link>
-            <Link href="/contact" className="btn-secondary">
-              Kontakt aufnehmen
-            </Link>
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button variant="primary" size="lg" icon={ArrowRight} href="/mission">
+                Unsere Mission
+              </Button>
+              <Button variant="secondary" size="lg" icon={Mail} href="/contact">
+                Kontakt aufnehmen
+              </Button>
+            </motion.div>
           </div>
         </section>
       </main>
