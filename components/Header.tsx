@@ -25,7 +25,7 @@ export default function Header() {
       <nav className="relative container-custom flex items-center justify-between py-4 px-4" role="navigation" aria-label="Main Navigation">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 relative z-10 group" aria-label="Herakles Defense Homepage">
-          <div className="relative p-2 rounded-lg bg-gradient-to-br from-white-primary/5 to-transparent backdrop-blur-sm border border-white-primary/10 transition-all duration-300 group-hover:border-orange-primary/40 shadow-lg shadow-orange-primary/20 group-hover:shadow-xl group-hover:shadow-orange-primary/40">
+          <div className="relative p-3 rounded-xl bg-gradient-to-br from-white-primary/5 to-transparent backdrop-blur-sm border-2 border-orange-primary/60 transition-all duration-300 shadow-[0_0_20px_rgba(255,107,53,0.4)] group-hover:border-orange-primary/80 group-hover:shadow-[0_0_30px_rgba(255,107,53,0.6)]">
             <Image
               src="/images/herakles-logo.png"
               alt="Herakles Defense Logo"

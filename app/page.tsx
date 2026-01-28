@@ -151,10 +151,10 @@ export default function Home() {
             <div className="relative h-[700px] md:h-[500px]">
               {/* Card 1 - Bottom Layer */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 className="absolute top-0 left-[5%] md:left-[10%] w-[90%] md:w-[35%] z-10"
                 whileHover={{ scale: 1.02, zIndex: 40 }}
               >
@@ -169,10 +169,10 @@ export default function Home() {
 
               {/* Card 2 - Middle Layer - More Spacing */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.15 }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="absolute top-[180px] md:top-[100px] left-[10%] md:left-[35%] w-[85%] md:w-[35%] z-20"
                 whileHover={{ scale: 1.02, zIndex: 40 }}
               >
@@ -187,10 +187,10 @@ export default function Home() {
 
               {/* Card 3 - Top Layer - More Spacing */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 className="absolute top-[360px] md:top-[200px] left-[5%] md:left-[55%] w-[90%] md:w-[35%] z-30"
                 whileHover={{ scale: 1.02, zIndex: 40 }}
               >
@@ -203,24 +203,6 @@ export default function Home() {
                 </div>
               </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="glass-card mt-8 max-w-4xl mx-auto"
-            >
-              <p className="text-lg text-white-secondary mb-4 leading-relaxed">
-                <span className="font-semibold text-white-primary">Bestehende Systeme?</span> Zu schwer, zu teuer, zu langsam.
-                Jammer funktionieren nur begrenzt. Lasersysteme sind Millionen-Investitionen.
-                Klassische Flak trifft keine 15cm-Targets bei 110 km/h.
-              </p>
-              <p className="text-xl font-bold text-orange-primary">
-                Soldaten sterben, weil es keine praktikable Lösung gab.<br />
-                Bis jetzt.
-              </p>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -406,9 +388,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Closing CTA */}
-      <section className="section-padding bg-black-secondary">
-        <div className="container-custom text-center">
+      {/* Closing CTA - With Vision Background */}
+      <section className="relative section-padding overflow-hidden">
+        {/* Vision-Style Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-primary/10 via-black-primary to-black-secondary" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,107,53,0.15),transparent_50%)]" />
+
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: 'linear-gradient(rgba(255,107,53,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.3) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} />
+
+        <div className="relative container-custom text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
