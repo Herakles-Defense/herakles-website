@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle, TrendingUp, DollarSign, Zap, Target, Rocket, Shield, Eye, Cpu, Battery, Radio, Clock } from "lucide-react";
+import { ArrowRight, PlayCircle, TrendingUp, DollarSign, Zap, ChevronDown, Target, Rocket, Shield } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
@@ -13,101 +13,105 @@ export default function Home() {
     <div className="min-h-screen bg-black-primary">
       <Header />
 
-      {/* Hero Section - 40/60 Editorial Split */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Vision Background only on text side */}
-        <div className="absolute inset-0 lg:right-[60%] bg-gradient-to-br from-orange-primary/10 via-black-primary to-black-secondary" />
-        <div className="absolute inset-0 lg:right-[60%] bg-[radial-gradient(circle_at_30%_50%,rgba(255,107,53,0.15),transparent_50%)]" />
+      {/* Hero Section - With Vision Background */}
+      <section className="relative min-h-screen flex items-center justify-center pt-24">
+        {/* Vision-Style Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-primary/10 via-black-primary to-black-secondary" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,107,53,0.15),transparent_50%)]" />
 
-        <div className="relative w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] min-h-screen">
-            {/* Left: Editorial Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              className="relative flex items-center justify-center p-8 lg:p-16 xl:p-24"
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: 'linear-gradient(rgba(255,107,53,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.3) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} />
+
+        <div className="relative container-custom px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Tagline - Animated */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-orange-primary font-semibold mb-6 text-lg tracking-wide uppercase"
             >
-              <div className="max-w-xl">
-                {/* Tagline */}
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="text-orange-primary font-semibold mb-6 text-xs md:text-sm tracking-[0.2em] uppercase"
-                >
-                  Built for the Threats Others Cannot Solve
-                </motion.p>
+              Built for the Threats Others Cannot Solve
+            </motion.p>
 
-                {/* Large Editorial Headline */}
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] text-white-primary"
-                  style={{ fontWeight: 800 }}
-                >
-                  HERAKLES<br />
-                  <span className="gradient-text">DEFENSE</span>
-                </motion.h1>
+            {/* Main Headline - Animated */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white-primary"
+            >
+              FPV-Kamikaze-Drohnen sind die größte Bedrohung<br className="hidden md:block" />
+              <span className="gradient-text"> moderner Kriegsführung.</span>
+            </motion.h1>
 
-                <motion.h2
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.7 }}
-                  className="text-2xl md:text-3xl font-light mb-6 text-white-secondary leading-relaxed"
-                >
-                  Das erste dezentrale Anti-FPV-System für mobile Infanterie.
-                </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-3xl md:text-4xl font-bold mb-12 text-white-primary"
+            >
+              Wir haben die Antwort.
+            </motion.h2>
 
-                {/* Subheadline */}
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.9 }}
-                  className="text-base md:text-lg mb-10 text-white-secondary leading-relaxed"
-                >
-                  Eine FPV-Drohne kostet 300 Euro und kann einen Panzer zerstören.<br />
-                  <span className="font-semibold text-orange-primary">Unser Interceptor kostet einen Bruchteil dessen, was er schützt.</span>
-                </motion.p>
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xl md:text-2xl mb-12 text-white-secondary max-w-4xl mx-auto leading-relaxed"
+            >
+              Eine FPV-Drohne kostet 300 Euro und kann einen Panzer zerstören und viele Leben beenden.<br />
+              <span className="font-semibold text-orange-primary">Unser Interceptor kostet einen Bruchteil dessen, was er schützt.</span>
+            </motion.p>
 
-                {/* CTA Buttons */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.1 }}
-                  className="flex flex-col sm:flex-row gap-4"
-                >
-                  <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
-                    Technologie entdecken
-                  </Button>
-                  <Button variant="secondary" size="lg" icon={PlayCircle} href="/mission">
-                    Unsere Mission
-                  </Button>
-                </motion.div>
-              </div>
+            {/* CTA Buttons - Animated */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            >
+              <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
+                Technologie entdecken
+              </Button>
+              <Button variant="secondary" size="lg" icon={PlayCircle} href="/mission">
+                Unsere Mission
+              </Button>
             </motion.div>
 
-            {/* Right: Large Image Bleeding to Edge */}
+            {/* Hero Image - Smaller */}
             <motion.div
-              initial={{ opacity: 0, scale: 1.05 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 0.2 }}
-              className="relative h-[50vh] lg:h-screen"
+              transition={{ duration: 1, delay: 1 }}
+              className="relative w-full max-w-3xl mx-auto image-container"
             >
               <Image
-                src="/images/interceptor-action.webp"
-                alt="Herakles Interceptor in Action"
-                fill
-                className="object-cover"
+                src="/images/interceptor-product.webp"
+                alt="Herakles Interceptor"
+                width={1000}
+                height={563}
+                className="rounded-xl shadow-2xl image-zoom"
                 priority
                 placeholder="blur"
-                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI4MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1NjMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFhMWExYSIvPjwvc3ZnPg=="
               />
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black-primary/30" />
             </motion.div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ChevronDown size={32} className="text-orange-primary" />
+        </motion.div>
       </section>
 
       {/* Problem Statement */}
@@ -133,7 +137,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Overlapping Cards with Z-Index */}
+          {/* Overlapping Cards with Larger Spacing */}
           <div className="max-w-6xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -144,7 +148,7 @@ export default function Home() {
               Die Fakten
             </motion.h2>
 
-            <div className="relative h-[600px] md:h-[400px]">
+            <div className="relative h-[700px] md:h-[500px]">
               {/* Card 1 - Bottom Layer */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -163,13 +167,13 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Card 2 - Middle Layer */}
+              {/* Card 2 - Middle Layer - More Spacing */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="absolute top-[140px] md:top-[50px] left-[10%] md:left-[35%] w-[85%] md:w-[35%] z-20"
+                className="absolute top-[180px] md:top-[100px] left-[10%] md:left-[35%] w-[85%] md:w-[35%] z-20"
                 whileHover={{ scale: 1.02, zIndex: 40 }}
               >
                 <div className="glass-card shadow-2xl p-8 text-center">
@@ -181,13 +185,13 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Card 3 - Top Layer */}
+              {/* Card 3 - Top Layer - More Spacing */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute top-[280px] md:top-[100px] left-[5%] md:left-[55%] w-[90%] md:w-[35%] z-30"
+                className="absolute top-[360px] md:top-[200px] left-[5%] md:left-[55%] w-[90%] md:w-[35%] z-30"
                 whileHover={{ scale: 1.02, zIndex: 40 }}
               >
                 <div className="glass-card shadow-2xl p-8 text-center">
@@ -221,7 +225,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Solution Section - Large Numbers + Image/Text Split */}
+      {/* Solution Section - Concept 5 Style with Large Numbers */}
       <section className="section-padding bg-gradient-to-b from-black-primary to-black-secondary">
         <div className="container-custom">
           <motion.h2
@@ -398,97 +402,6 @@ export default function Home() {
             <Button variant="primary" size="lg" icon={ArrowRight} href="/technology">
               Mehr zur Technologie
             </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Technical Advantages - Asymmetric Feature Showcase */}
-      <section className="section-padding bg-black-primary">
-        <div className="container-custom">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold mb-12 text-white-primary text-center"
-          >
-            Technische Vorteile
-          </motion.h2>
-
-          {/* Asymmetric Layout: 1 Large + 4 Small */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1 }
-              }
-            }}
-          >
-            {/* Large Feature - spans 2 columns + includes image */}
-            <motion.div
-              variants={{ hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } } }}
-              className="md:col-span-2 lg:row-span-2"
-            >
-              <div className="glass-card h-full flex flex-col">
-                <div className="relative h-64 mb-6 -mx-8 -mt-8 rounded-t-xl overflow-hidden">
-                  <Image
-                    src="/images/interceptor-product.webp"
-                    alt="KI System"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black-secondary to-transparent" />
-                </div>
-                <div className="flex-grow">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Eye className="text-orange-primary" size={40} />
-                    <h3 className="text-2xl font-bold text-white-primary">KI-Gestützte Erkennung</h3>
-                  </div>
-                  <p className="text-base text-white-secondary leading-relaxed">
-                    Modernste Computer Vision Algorithmen identifizieren und klassifizieren FPV-Drohnen in Echtzeit.
-                    Neuronale Netze trainiert auf tausenden Drohnen-Signaturen für präzise Zielerfassung
-                    auch bei hohen Geschwindigkeiten und schwierigen Lichtverhältnissen.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Small Cards */}
-            <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
-              <GradientBorderCard
-                icon={Clock}
-                title="Reaktionszeit"
-                description="Unter 4 Minuten von Detektion bis zum Abfang"
-              />
-            </motion.div>
-
-            <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
-              <GradientBorderCard
-                icon={Radio}
-                title="EW-Resistent"
-                description="Keine Funkverbindung nach Launch erforderlich"
-              />
-            </motion.div>
-
-            <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
-              <GradientBorderCard
-                icon={Cpu}
-                title="Edge Computing"
-                description="Onboard-Verarbeitung für minimale Latenz"
-              />
-            </motion.div>
-
-            <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}>
-              <GradientBorderCard
-                icon={Battery}
-                title="Energieeffizient"
-                description="Optimierter Stromverbrauch für Extended Operations"
-              />
-            </motion.div>
           </motion.div>
         </div>
       </section>

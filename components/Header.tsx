@@ -25,7 +25,7 @@ export default function Header() {
       <nav className="relative container-custom flex items-center justify-between py-4 px-4" role="navigation" aria-label="Main Navigation">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 relative z-10 group" aria-label="Herakles Defense Homepage">
-          <div className="relative p-2 rounded-lg bg-gradient-to-br from-white-primary/5 to-transparent backdrop-blur-sm border border-white-primary/10 transition-all duration-300 group-hover:border-orange-primary/30 group-hover:shadow-lg group-hover:shadow-orange-primary/20">
+          <div className="relative p-2 rounded-lg bg-gradient-to-br from-white-primary/5 to-transparent backdrop-blur-sm border border-white-primary/10 transition-all duration-300 group-hover:border-orange-primary/40 shadow-lg shadow-orange-primary/20 group-hover:shadow-xl group-hover:shadow-orange-primary/40">
             <Image
               src="/images/herakles-logo.png"
               alt="Herakles Defense Logo"
@@ -33,7 +33,7 @@ export default function Header() {
               height={77}
               className="h-16 md:h-20 w-auto transition-all duration-300 group-hover:scale-105"
               priority
-              style={{ objectFit: 'contain', transform: 'scale(1.3)' }}
+              style={{ objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.6)' }}
             />
           </div>
         </Link>
