@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50" role="banner">
       {/* Glassmorphism Background */}
-      <div className="absolute inset-0 bg-black-primary/80 backdrop-blur-md border-b border-white-primary/10" />
+      <div className="absolute inset-0 bg-black-primary/80 backdrop-blur-md border-b border-white-primary/10" style={{ WebkitBackdropFilter: 'blur(12px)' }} />
 
       <nav className="relative container-custom flex items-center justify-between py-4 px-4" role="navigation" aria-label="Main Navigation">
         {/* Logo */}

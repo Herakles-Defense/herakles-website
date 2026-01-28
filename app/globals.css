@@ -50,12 +50,26 @@
 
   html {
     scroll-behavior: smooth;
+    /* Ensure consistent box-sizing across browsers */
+    box-sizing: border-box;
   }
 
   /* Improved text rendering */
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: inherit;
+  }
+
+  /* Safari-specific fixes */
+  @supports (-webkit-appearance: none) {
+    /* Fix for Safari input fields */
+    input,
+    textarea,
+    select {
+      -webkit-appearance: none;
+      appearance: none;
+    }
   }
 
   /* Reduced Motion Support - Accessibility */
@@ -186,6 +200,7 @@
   .glass-card {
     @apply p-8 rounded-xl border transition-all duration-300;
     background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-color: rgba(255, 255, 255, 0.1);
   }
@@ -203,6 +218,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    /* Fallback for browsers without background-clip support */
+    color: var(--color-orange-primary);
+  }
+
+  /* Only apply gradient if background-clip is supported */
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .gradient-text {
+      color: transparent;
+    }
   }
 
   /* Line Accent (for minimal cards) */

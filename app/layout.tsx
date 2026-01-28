@@ -69,6 +69,10 @@ export const metadata: Metadata = {
     initialScale: 1,
     maximumScale: 5,
   },
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#0A0A0A' },
+    { media: '(prefers-color-scheme: dark)', color: '#0A0A0A' }
+  ],
   verification: {
     // google: 'your-google-verification-code', // Add when available
     // yandex: 'your-yandex-verification-code', // Add when available
@@ -82,6 +86,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        {/* Preconnect to Google Fonts for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={inter.className}>
         {children}
         <CookieBanner />

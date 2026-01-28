@@ -90,8 +90,12 @@ export default function Footer() {
             <h4 id="footer-contact-heading" className="text-white-primary font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-white-secondary">
-                <Mail size={16} className="text-orange-primary" />
-                <a href="mailto:info@hiveguard.com" className="hover:text-orange-primary transition-colors">
+                <Mail size={16} className="text-orange-primary" aria-hidden="true" />
+                <a
+                  href="mailto:info@hiveguard.com"
+                  className="hover:text-orange-primary transition-colors"
+                  aria-label="Email an info@hiveguard.com senden"
+                >
                   info@hiveguard.com
                 </a>
               </li>
