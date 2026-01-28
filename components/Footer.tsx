@@ -1,53 +1,114 @@
 import Link from "next/link";
+import { Mail, Building2, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary border-t border-neutral/20">
+    <footer className="bg-black-secondary border-t border-white-primary/10">
       <div className="container-custom py-12 px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-accent font-bold text-lg mb-4">Herakles</h3>
-            <p className="text-white/70 text-sm">
+            <h3 className="text-orange-primary font-bold text-lg mb-4">Herakles</h3>
+            <p className="text-white-secondary text-sm leading-relaxed">
               Tactical Counter-UAS Defense System
             </p>
-            <p className="text-white/50 text-xs mt-2">
+            <p className="text-gray-500 text-xs mt-3">
               Built for the Threats Others Cannot Solve
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Navigation</h4>
+            <h4 className="text-white-primary font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-white/70 hover:text-accent transition-colors">Home</Link></li>
-              <li><Link href="/technology" className="text-white/70 hover:text-accent transition-colors">Technologie</Link></li>
-              <li><Link href="/mission" className="text-white/70 hover:text-accent transition-colors">Mission</Link></li>
+              <li>
+                <Link
+                  href="/"
+                  className="text-white-secondary hover:text-orange-primary transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-0 group-hover:w-2 h-px bg-orange-primary transition-all duration-300" />
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/technology"
+                  className="text-white-secondary hover:text-orange-primary transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-0 group-hover:w-2 h-px bg-orange-primary transition-all duration-300" />
+                  Technology
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/mission"
+                  className="text-white-secondary hover:text-orange-primary transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-0 group-hover:w-2 h-px bg-orange-primary transition-all duration-300" />
+                  Mission
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-white-secondary hover:text-orange-primary transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-0 group-hover:w-2 h-px bg-orange-primary transition-all duration-300" />
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Rechtliches</h4>
+            <h4 className="text-white-primary font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/impressum" className="text-white/70 hover:text-accent transition-colors">Impressum</Link></li>
-              <li><Link href="/datenschutz" className="text-white/70 hover:text-accent transition-colors">Datenschutz</Link></li>
+              <li>
+                <Link
+                  href="/impressum"
+                  className="text-white-secondary hover:text-orange-primary transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-0 group-hover:w-2 h-px bg-orange-primary transition-all duration-300" />
+                  Impressum
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/datenschutz"
+                  className="text-white-secondary hover:text-orange-primary transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-0 group-hover:w-2 h-px bg-orange-primary transition-all duration-300" />
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Kontakt</h4>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li>info@hiveguard.com</li>
-              <li>Hive Guard UG (haftungsbeschränkt)</li>
-              <li className="text-white/50 text-xs mt-3">München, Deutschland</li>
+            <h4 className="text-white-primary font-semibold mb-4">Contact</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center gap-2 text-white-secondary">
+                <Mail size={16} className="text-orange-primary" />
+                <a href="mailto:info@hiveguard.com" className="hover:text-orange-primary transition-colors">
+                  info@hiveguard.com
+                </a>
+              </li>
+              <li className="flex items-start gap-2 text-white-secondary">
+                <Building2 size={16} className="text-orange-primary mt-0.5" />
+                <span>Hive Guard UG<br />(haftungsbeschränkt)</span>
+              </li>
+              <li className="flex items-center gap-2 text-gray-500 text-xs">
+                <MapPin size={14} className="text-orange-primary" />
+                München, Germany
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Herakles Defense. Alle Rechte vorbehalten.</p>
+        <div className="mt-12 pt-8 border-t border-white-primary/10 text-center text-gray-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} Herakles Defense. All rights reserved.</p>
         </div>
       </div>
     </footer>

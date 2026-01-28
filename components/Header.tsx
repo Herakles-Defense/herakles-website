@@ -3,16 +3,28 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Home, Cpu, Target, Mail, Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import Button from "./Button";
+
+const navItems = [
+  { href: "/", label: "Home", icon: Home },
+  { href: "/technology", label: "Technology", icon: Cpu },
+  { href: "/mission", label: "Mission", icon: Target },
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-neutral">
-      <nav className="container-custom flex items-center justify-between py-4 px-4">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Glassmorphism Background */}
+      <div className="absolute inset-0 bg-black-primary/80 backdrop-blur-md border-b border-white-primary/10" />
+
+      <nav className="relative container-custom flex items-center justify-between py-4 px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3">
+        <Link href="/" className="flex items-center space-x-3 relative z-10">
           <Image
             src="/images/herakles-logo.png"
             alt="Herakles Logo"
@@ -23,47 +35,97 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="text-secondary hover:text-accent transition-colors font-medium">
-            Home
-          </Link>
-          <Link href="/technology" className="text-secondary hover:text-accent transition-colors font-medium">
-            Technologie
-          </Link>
-          <Link href="/mission" className="text-secondary hover:text-accent transition-colors font-medium">
-            Mission
-          </Link>
-          <LanguageSwitcher />
-          <Link href="/contact" className="btn-primary">
-            Kontakt
-          </Link>
+        <div className="hidden md:flex items-center gap-2">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group flex items-center gap-2 px-4 py-2 rounded-lg text-white-primary hover:text-orange-primary transition-all duration-300 hover:bg-white-primary/5"
+            >
+              <item.icon size={18} className="transition-transform group-hover:translate-x-1" />
+              <span className="font-medium">{item.label}</span>
+            </Link>
+          ))}
+
+          <div className="ml-2">
+            <LanguageSwitcher />
+          </div>
+
+          <div className="ml-2">
+            <Button variant="primary" size="md" icon={Mail} href="/contact">
+              Contact
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-secondary"
+        <motion.button
+          className="md:hidden text-white-primary p-2 rounded-lg hover:bg-white-primary/10 transition-colors relative z-10"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          whileTap={{ scale: 0.95 }}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </motion.button>
       </nav>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-primary border-t border-neutral">
-          <div className="flex flex-col space-y-4 py-4 px-4">
-            <Link href="/" className="text-secondary hover:text-accent font-medium">Home</Link>
-            <Link href="/technology" className="text-secondary hover:text-accent font-medium">Technologie</Link>
-            <Link href="/mission" className="text-secondary hover:text-accent font-medium">Mission</Link>
-            <div className="pt-2">
-              <LanguageSwitcher />
+      {/* Mobile Menu with Animation */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden overflow-hidden bg-black-secondary/95 backdrop-blur-md border-t border-white-primary/10"
+          >
+            <div className="flex flex-col space-y-2 py-4 px-4">
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white-primary hover:text-orange-primary hover:bg-white-primary/5 transition-all font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <item.icon size={20} />
+                    <span>{item.label}</span>
+                  </Link>
+                </motion.div>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
+                className="pt-2"
+              >
+                <LanguageSwitcher />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navItems.length + 1) * 0.1 }}
+                className="pt-2"
+              >
+                <Button
+                  variant="primary"
+                  size="md"
+                  icon={Mail}
+                  href="/contact"
+                  className="w-full justify-center"
+                >
+                  Contact
+                </Button>
+              </motion.div>
             </div>
-            <Link href="/contact" className="btn-primary inline-block text-center">Kontakt</Link>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
