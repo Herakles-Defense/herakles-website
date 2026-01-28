@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           <Link href="/" className="text-neutral hover:text-accent transition-colors">
             Home
           </Link>
@@ -38,6 +39,7 @@ export default function Header() {
           <Link href="/cto" className="text-neutral hover:text-accent transition-colors">
             Für CTOs
           </Link>
+          <LanguageSwitcher />
           <Link href="/contact" className="btn-primary">
             Kontakt
           </Link>
@@ -63,6 +65,9 @@ export default function Header() {
             <Link href="/mission" className="text-neutral hover:text-accent">Mission</Link>
             <Link href="/about" className="text-neutral hover:text-accent">Über uns</Link>
             <Link href="/cto" className="text-neutral hover:text-accent">Für CTOs</Link>
+            <div className="pt-2">
+              <LanguageSwitcher />
+            </div>
             <Link href="/contact" className="btn-primary inline-block text-center">Kontakt</Link>
           </div>
         </div>

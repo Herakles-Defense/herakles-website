@@ -1,4 +1,8 @@
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+// Only initialize Resend if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(request: Request) {
   try {
@@ -22,26 +26,51 @@ export async function POST(request: Request) {
       );
     }
 
-    // In production, send email here
-    // For now, just log and return success
-    console.log('Contact form submission:', { name, email, company, message });
+    // Send email using Resend
+    if (process.env.RESEND_API_KEY && resend) {
+      try {
+        await resend.emails.send({
+          from: 'Herakles Website <noreply@herakles-defense.com>',
+          to: 'info@herakles-defense.com',
+          replyTo: email,
+          subject: `Kontaktanfrage von ${name}${company ? ` (${company})` : ''}`,
+          html: `
+            <h2>Neue Kontaktanfrage</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>E-Mail:</strong> ${email}</p>
+            ${company ? `<p><strong>Unternehmen:</strong> ${company}</p>` : ''}
+            <h3>Nachricht:</h3>
+            <p>${message.replace(/\n/g, '<br>')}</p>
+            <hr>
+            <p style="color: #666; font-size: 12px;">Diese Nachricht wurde über das Kontaktformular auf herakles-defense.com gesendet.</p>
+          `,
+        });
 
-    // TODO: Integrate with email service (SendGrid, Resend, etc.)
-    // const response = await sendEmail({
-    //   to: 'info@herakles-defense.com',
-    //   from: email,
-    //   subject: `Kontaktanfrage von ${name}`,
-    //   text: message
-    // });
-
-    return NextResponse.json(
-      { success: true, message: 'Nachricht erfolgreich gesendet!' },
-      { status: 200 }
-    );
+        return NextResponse.json(
+          { success: true, message: 'Nachricht erfolgreich gesendet!' },
+          { status: 200 }
+        );
+      } catch (emailError) {
+        console.error('Email sending error:', emailError);
+        // Fall back to logging if email fails
+        console.log('Contact form submission (email failed, logged instead):', { name, email, company, message });
+        return NextResponse.json(
+          { success: true, message: 'Nachricht erfolgreich empfangen. Wir melden uns in Kürze!' },
+          { status: 200 }
+        );
+      }
+    } else {
+      // No API key configured - just log
+      console.log('Contact form submission (no email service configured):', { name, email, company, message });
+      return NextResponse.json(
+        { success: true, message: 'Nachricht erfolgreich empfangen. Wir melden uns in Kürze!' },
+        { status: 200 }
+      );
+    }
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
-      { error: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.' },
+      { error: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut oder senden Sie eine E-Mail an info@herakles-defense.com' },
       { status: 500 }
     );
   }
