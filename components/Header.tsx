@@ -35,6 +35,9 @@ export default function Header() {
           <Link href="/about" className="text-neutral hover:text-accent transition-colors">
             Über uns
           </Link>
+          <Link href="/cto" className="text-neutral hover:text-accent transition-colors">
+            Für CTOs
+          </Link>
           <Link href="/contact" className="btn-primary">
             Kontakt
           </Link>
@@ -59,6 +62,7 @@ export default function Header() {
             <Link href="/technology" className="text-neutral hover:text-accent">Technologie</Link>
             <Link href="/mission" className="text-neutral hover:text-accent">Mission</Link>
             <Link href="/about" className="text-neutral hover:text-accent">Über uns</Link>
+            <Link href="/cto" className="text-neutral hover:text-accent">Für CTOs</Link>
             <Link href="/contact" className="btn-primary inline-block text-center">Kontakt</Link>
           </div>
         </div>

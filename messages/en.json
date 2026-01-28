@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "Home",
+    "technology": "Technology",
+    "mission": "Mission",
+    "about": "About us",
+    "contact": "Contact",
+    "cto": "For CTOs"
+  },
+  "hero": {
+    "title": "FPV drones are the greatest threat in modern warfare",
+    "subtitle": "We have the answer.",
+    "description": "One FPV drone costs 300 euros and can destroy a tank.<br />Our interceptor costs a fraction of what it protects.",
+    "cta": "Discover Technology",
+    "cta2": "Our Mission"
+  },
+  "footer": {
+    "company": "Herakles",
+    "tagline": "Tactical Counter-UAS Defense System",
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "contact": "Contact",
+    "impressum": "Legal Notice",
+    "datenschutz": "Privacy Policy",
+    "copyright": "All rights reserved."
+  }
+}
